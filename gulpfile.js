@@ -1,5 +1,7 @@
 
-require('gulp-awspublish');
+var aws  = require('gulp-awspublish'),
+
+    dirs = require('./support/dirs.js');
 
 
 
