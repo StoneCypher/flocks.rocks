@@ -15,16 +15,40 @@ var max_age = 300;
 
 
 
-gulp.task('publish', function() {
+gulp.task("clean", function() {
+  // whargarbl todo
+});
 
-  var headers = {'Cache-Control' : 'max-age=' + max_age.toString()},
+
+
+
+
+gulp.task("less", ["clean"], function() {
+  // whargarbl todo
+});
+
+
+
+
+
+gulp.task("build", ["less"], function() {
+  // whargarbl todo
+});
+
+
+
+
+
+gulp.task("publish", ["build"], function() {
+
+  var headers = {"Cache-Control" : "max-age=" + max_age.toString()},
       target  = aws.create({
-        'key'    : process.env.FLOCKSROCKS_ACCESS_KEY_ID,
-        'secret' : process.env.FLOCKSROCKS_SECRET_ACCESS_KEY,
-        'bucket' : process.env.FLOCKSROCKS_BUCKET
+        "key"    : process.env.FLOCKSROCKS_ACCESS_KEY_ID,
+        "secret" : process.env.FLOCKSROCKS_SECRET_ACCESS_KEY,
+        "bucket" : process.env.FLOCKSROCKS_BUCKET
       });
 
-  return gulp.src(dirs.publish + '/**/*')
+  return gulp.src(dirs.publish + "/**/*")
     .pipe(target.publish(headers))
     .pipe(aws.reporter());
 

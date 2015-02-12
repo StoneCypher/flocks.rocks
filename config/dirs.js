@@ -1,9 +1,12 @@
 
 module.exports = {
 
-  'assets'  : './assets/',
-  'less'    : './assets/less/',
+  "assets"    : "./assets/",
+  "less"      : "./assets/less/",
 
-  'publish' : './build/publish/'
+  "build"     : "./build/",
+  "build.css" : "./build/css/",
+
+  "publish"   : "./build/publish/"
 
 };
