@@ -6,6 +6,7 @@ var path       = require("path"),
     aws        = require("gulp-awspublish"),
     less       = require("gulp-less"),
     clean      = require("gulp-clean"),
+    uglify     = require("gulp-uglify"),
 
     source     = require("vinyl-source-stream"),
     browserify = require("browserify"),
@@ -58,7 +59,7 @@ gulp.task("make-directories", ["clean"], function() {
 
 
 
-gulp.task("less", ["make-directories"], function() {
+gulp.task("build-less", ["make-directories"], function() {
   return gulp.src(dir("less") + "main.less")
     .pipe(less({"filename" : "main.less"}))
     .pipe(gulp.dest(dirs.built_css));
@@ -68,7 +69,7 @@ gulp.task("less", ["make-directories"], function() {
 
 
 
-gulp.task("react", function() {
+gulp.task("react", ["make-directories"], function() {
 
   var browserifyConfig = {
     "entries"    : dir("react") + "main.js",
@@ -81,7 +82,7 @@ gulp.task("react", function() {
     .require(dir("react") + "main.jsx", { "expose" : "main" })
     .bundle()
     .on("error", errorHandler)
-    .pipe(source("react-bundle.js"))
+    .pipe(source("bundle.js"))
     .pipe(gulp.dest(dirs.built_js));
 
 });
@@ -90,14 +91,42 @@ gulp.task("react", function() {
 
 
 
-gulp.task("build", ["less"]);
+gulp.task("uglify-js", ["build-js"], function() {
+  return gulp.src(dir("built_js") + "bundle.js")
+    .pipe(uglify())
+    .pipe(gulp.dest(dir("uglified_js")));
+});
+
+gulp.task("skip-uglify-js", ["build-js"], function() {
+  return gulp.src(dir("built_js") + "bundle.js")
+    .pipe(gulp.dest(dir("uglified_js")));
+});
+
+
+
+
+
+gulp.task("build-js",   ["react"]);
+
+gulp.task("dev-build",  ["build-less", "skip-uglify-js"]);
+gulp.task("prod-build", ["build-less", "uglify-js"]);
+
+gulp.task("build",      [production? "prod-build" : "dev-build"]);
 
 
 
 
 
 gulp.task("arrange-publish", ["build"], function() {
-  // whargarbl todo
+
+  return gulp.src([
+
+    dir("html")        + "**/*",
+    dir("built_css")   + "**/*",
+    dir("uglified_js") + "**/*"
+
+  ]).pipe(gulp.dest( dir("publish") ));
+
 });
 
 

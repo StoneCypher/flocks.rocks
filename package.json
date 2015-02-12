@@ -32,6 +32,7 @@
     "gulp-awspublish": "*",
     "gulp-clean": "*",
     "gulp-less": "*",
+    "gulp-uglify": "*",
     "react": "*",
     "reactify": "*",
     "vinyl-source-stream": "*"
