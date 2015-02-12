@@ -117,7 +117,7 @@ gulp.task("build",      [production? "prod-build" : "dev-build"]);
 
 
 
-gulp.task("arrange-publish", ["build"], function() {
+gulp.task("arrange-publish", ["prod-build"], function() {
 
   return gulp.src([
 
