@@ -1,5 +1,8 @@
 
-var gulp  = require("gulp"),
+var path  = require("path"),
+    fs    = require("fs"),
+
+    gulp  = require("gulp"),
     aws   = require("gulp-awspublish"),
     less  = require("gulp-less"),
     clean = require("gulp-clean"),
@@ -17,22 +20,26 @@ var max_age = 300;
 
 
 gulp.task("clean", function() {
-  // whargarbl todo
+  return gulp.src([dirs.build], {"read" : false}).pipe(clean());
 });
 
 
 
 
 
-gulp.task("make directories", ["clean"], function() {
-  // whargarbl todo
+gulp.task("make-directories", ["clean"], function() {
+  for (var key in dirs) {
+    try {
+      fs.mkdirSync('.' + path.sep + path.normalize(dirs[key]));
+    } catch(e) { }
+  }
 });
 
 
 
 
 
-gulp.task("less", ["make directories"], function() {
+gulp.task("less", ["make-directories"], function() {
   // whargarbl todo
 });
 
