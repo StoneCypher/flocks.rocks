@@ -1,7 +1,8 @@
 
-var aws  = require('gulp-awspublish'),
+var gulp = require('gulp'),
+    aws  = require('gulp-awspublish'),
 
-    dirs = require('./support/dirs.js');
+    dirs = require('./config/dirs.js');
 
 
 
@@ -13,7 +14,7 @@ var max_age = 300;
 
 
 
-gulp.task('aws-push', function() {
+gulp.task('publish', function() {
 
   var headers = {'Cache-Control' : 'max-age=' + max_age.toString()},
       target  = aws.create({
@@ -22,7 +23,7 @@ gulp.task('aws-push', function() {
         'bucket' : process.env.FLOCKSROCKS_BUCKET
       });
 
-  return gulp.src(dirs.publish_root + '/**/*')
+  return gulp.src(dirs.publish + '/**/*')
     .pipe(target.publish(headers))
     .pipe(aws.reporter());
 
