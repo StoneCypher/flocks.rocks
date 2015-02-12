@@ -78,8 +78,7 @@ gulp.task("react", ["make-directories"], function() {
 
   return browserify(browserifyConfig, { "debug" : !production })
     .transform({ "es6" : true }, reactify)
-    .require("react")
-    .require(dir("react") + "main.jsx", { "expose" : "main" })
+    .require(dir("react") + "RR.jsx", { "expose" : "RR" })
     .bundle()
     .on("error", errorHandler)
     .pipe(source("bundle.js"))

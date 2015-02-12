@@ -6,10 +6,10 @@
     "use strict";
 
     var React = require("react"),
-        Main  = require("main");
+        RR    = require("RR");
 
     function loadHandler() {
-        React.render(React.createFactory(Main)(null), document.body);
+        React.render(React.createFactory(RR)({'a':'b'}), document.getElementById('page'));
     }
 
     document.addEventListener("DOMContentLoaded", loadHandler, false);
