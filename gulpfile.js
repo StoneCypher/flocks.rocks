@@ -121,6 +121,8 @@ gulp.task("arrange-publish", ["prod-build"], function() {
   return gulp.src([
 
     dir("html")        + "**/*",
+    dir("theme")       + "**/background*.png",
+    dir("background")  + "**/bg*.jpg",
     dir("built_css")   + "**/*",
     dir("uglified_js") + "**/*"
 

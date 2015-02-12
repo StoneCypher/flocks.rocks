@@ -9,7 +9,7 @@
         RR    = require("RR");
 
     function loadHandler() {
-        React.render(React.createFactory(RR)({'a':'b'}), document.getElementById('page'));
+        React.render(React.createFactory(RR)({'a':'b'}), document.getElementById('host'));
     }
 
     document.addEventListener("DOMContentLoaded", loadHandler, false);
