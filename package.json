@@ -27,9 +27,13 @@
   },
   "homepage": "https://github.com/StoneCypher/flocks.rocks",
   "devDependencies": {
+    "browserify": "*",
     "gulp": "*",
     "gulp-awspublish": "*",
     "gulp-clean": "*",
-    "gulp-less": "*"
+    "gulp-less": "*",
+    "react": "*",
+    "reactify": "*",
+    "vinyl-source-stream": "*"
   }
 }
