@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/StoneCypher/flocks.rocks",
   "devDependencies": {
-    "gulp": "*"
+    "gulp": "*",
+    "gulp-awspublish": "*"
   }
 }
