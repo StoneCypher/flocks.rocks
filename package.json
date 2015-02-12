@@ -29,6 +29,7 @@
   "devDependencies": {
     "gulp": "*",
     "gulp-awspublish": "*",
+    "gulp-clean": "*",
     "gulp-less": "*"
   }
 }

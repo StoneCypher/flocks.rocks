@@ -5,7 +5,7 @@ module.exports = {
   "less"      : "./assets/less/",
 
   "build"     : "./build/",
-  "build.css" : "./build/css/",
+  "build_css" : "./build/css/",
 
   "publish"   : "./build/publish/"
 
