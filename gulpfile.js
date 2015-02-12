@@ -40,7 +40,9 @@ gulp.task("make-directories", ["clean"], function() {
 
 
 gulp.task("less", ["make-directories"], function() {
-  // whargarbl todo
+  return gulp.src(dirs.less + path.sep + "main.less")
+    .pipe(less({"filename" : "main.less"}))
+    .pipe(gulp.dest(dirs.built_css));
 });
 
 
@@ -55,7 +57,15 @@ gulp.task("build", ["less"], function() {
 
 
 
-gulp.task("publish", ["build"], function() {
+gulp.task("arrange-publish", ["build"], function() {
+  // whargarbl todo
+});
+
+
+
+
+
+gulp.task("publish", ["arrange-publish"], function() {
 
   var headers = {"Cache-Control" : "max-age=" + max_age.toString()},
       target  = aws.create({
