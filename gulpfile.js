@@ -1,8 +1,9 @@
 
-var gulp = require('gulp'),
-    aws  = require('gulp-awspublish'),
+var gulp = require("gulp"),
+    aws  = require("gulp-awspublish"),
+    less = require("gulp-less"),
 
-    dirs = require('./config/dirs.js');
+    dirs = require("./config/dirs.js");
 
 
 

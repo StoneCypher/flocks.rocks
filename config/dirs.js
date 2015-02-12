@@ -1,6 +1,9 @@
 
 module.exports = {
 
-  'publish': './build/publish/'
+  'assets'  : './assets/',
+  'less'    : './assets/less/',
+
+  'publish' : './build/publish/'
 
 };
