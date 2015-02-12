@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/StoneCypher/flocks.rocks/issues"
   },
-  "homepage": "https://github.com/StoneCypher/flocks.rocks"
+  "homepage": "https://github.com/StoneCypher/flocks.rocks",
+  "devDependencies": {
+    "gulp": "*"
+  }
 }
