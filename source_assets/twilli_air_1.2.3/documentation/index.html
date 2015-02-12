@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TWILLI | Air - Documentation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+    <style type="text/css" media="screen">
+      p, table, hr, .box { margin-bottom:25px; }
+      .box p { margin-bottom:10px; }
+      xmp { font-size:1.05em; }
+      .mono { font-family: monospace; font-size:1.05em; }
+    </style>    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h2>TWILLI | Air</h2>
+        <h5>Documentation by &ldquo;Twilli Themes&rdquo;</h5>
+        <h5>Email: <a href="mailto:twilli.themes@gmail.com">twilli.themes@gmail.com</a></h5>
+      </div>
+
+
+    <h2 id="toc" class="alt">Table of Contents</h2>
+    <ol class="alpha">
+      <li><a href="#about">About <em>TWILLI Air</em> Theme</a></li>
+      <li><a href="#files_included">What's Included</a></li>
+      <li><a href="#html_structure">HTML Structure</a></li>
+      <li><a href="#main_menu">Main Menu</a></li>
+      <li><a href="#sections">Sections</a></li>
+      <li><a href="#backgrounds">Page Background Images</a></li>
+      <li><a href="#popups">Content Popups</a></li>
+      <li><a href="#carousel">Carousel</a></li>
+      <li><a href="#imagecarousel">Image Carousel in Popup</a></li>
+      <li><a href="#contact_form">Contact Form</a></li>
+      <li><a href="#font_icons">Scalable Font Icons</a></li>
+      <li><a href="#social_icons">Social Icons</a></li>
+      <li><a href="#credits">Sources and Credits</a></li>
+    </ol>
+    
+    <hr>
+    
+    <!-- ============== DOC SECTION - ABOUT TWILLI ============== -->
+    <h3 id="about"><strong>About <em>TWILLI Air</em> Theme</strong> - <a href="#toc">top</a></h3>
+
+      <p><em>TWILLI Air</em> is a responsive one-page scroll HTML/CSS/JS theme/template, with a simple and minimalist concept.</p>
+
+      <p>The template is best suited for websites with minimal and concise content, but allows for more content to be displayed in elegant popups.</p>
+
+      <p>Bootstrap 3.2.0 is used in the theme sections structure.</p>
+
+    <hr>
+    <!-- ============== END: DOC SECTION - ABOUT TWILLI ============== -->    
+
+    <!-- ============== DOC SECTION - FILES INCLUDED ============== -->
+    <h3 id="files_included"><strong>What's Included</strong> - <a href="#toc">top</a></h3>
+
+      <p>Included with this theme are the following:</p>
+      <ul>
+        <li><strong>index.html</strong> - the main theme file from where you can edit the website's content.</li>
+        <li><strong>index_w_extra_comments.html</strong> - the same index.html but <strong>with extra documentation/inline comments</strong>.</li>
+        <li><strong>assets/</strong>
+          <ul>
+            <li><strong>bootstrap/</strong> - includes the Bootstrap dist files. It is NOT recommended to edit these files.</li>
+            <li><strong>css/</strong> - includes the <em>TWILLI Air</em> theme style (styles.css) and the font files. It also includes custom.css, which is intended to include your custom styles for your website.</li>
+            <li><strong>images/</strong> - all the images used in the theme are found in this folder
+              <ul>
+                <li><strong>theme_images/</strong> - DO NOT DELETE these images as they are needed for the theme styling.</li>
+                <li><strong>other_images/</strong> - these are the theme images used as "dummy" content to populate the website. Replace these with your images.</li>
+              </ul>
+            </li>
+            <li><strong>js/</strong> - includes the JS scripts used in the <em>TWILLI Air</em> Theme.
+              <ul>
+                <li><strong>functions.js</strong> - this includes all the javascript custom functions used in the website. This is the uncomressed version which you can use for editing / further development. The index.html file by default links to the minified version functions.min.js</li>
+                <li><strong>functions.min.js</strong> - the compressed/minified version of functions.js</li>
+                <li><strong>initialise-functions.js</strong> - all the functions in functions.js above are initialised in this file (on document/window load, and on page resize).</li>
+              </ul>
+            </li>
+            <li><strong>php/</strong> - includes mail.php which is the mailer of the contact form found in the website.</li>
+          </ul>
+        </li><!-- end: assets -->
+        <li><strong>documentation/</strong> - includes the documentation page and a detailed changelog for <em>TWILLI Air</em> (index.html and changelog.html respectively). Extra comments are found inline inside the main index.html theme file.</li>
+      </ul>
+    <hr>
+    <!-- ============== END: DOC SECTION - FILES INCLUDED ============== -->
+
+    <!-- ============== DOC SECTION - WEBSITE GENERAL STRUCTURE ============== -->
+    <h3 id="html_structure"><strong>HTML Structure</strong> - <a href="#toc">top</a></h3>
+
+      <p>The main page (index.html) of <em>TWILLI Air</em> is structured as follows:</p>
+      
+      <xmp>
+  <div id="outer-container">
+
+    <!-- LEFT SIDEBAR -->
+    <section id="left-sidebar">
+      <!-- logo --><div class="logo"></div>
+      <!-- main menu --><ul id="main-menu"></ul>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section id="main-content">
+      <!-- section 1 --><article id="section1" class="section-wrapper"></article>
+      <!-- section 2 --><article id="section2" class="section-wrapper"></article>
+      <!-- section 3 --><article id="section3" class="section-wrapper"></article>
+      <!-- etc -->
+    </section>
+
+    <!-- FOOTER -->
+    <section id="footer">
+      <!-- social icons --><ul class="social-icons"></ul>
+      <!-- copyright text --><div class="footer-text-line"></div>
+    </section>
+
+  </div>
+      </xmp>
+      
+    <hr>
+    <!-- ============== END: DOC SECTION - WEBSITE GENERAL STRUCTURE ============== -->
+
+    <!-- ============== DOC SECTION - MAIN MENU ============== -->
+    <h3 id="main_menu"><strong>Main Menu</strong> - <a href="#toc">top</a></h3>
+
+      <p><img src="assets/images/twilli_menu.JPG"></p>
+
+      <p>To edit the main menu, you have to look for the <span class="mono">&lt;ul id="main-menu"&gt;</span>.</p>
+      <ul>
+        <li>Each menu item links to a section (see section <a href="#sections"><em>Sections</em></a> below) in the main content.</li>
+        <li>Each menu item should follow this format:
+<xmp><li id="menu-item-[link section unique id]" class="menu-item scroll">
+  <a href="#[link section unique id]">[Link text to the section]</a>
+</li></xmp>
+        </li>
+        <li>If you want to include a link which doesn't scroll to a section inside the page, remove the "scroll" class from the <span class="mono">&lt;li&gt;</span>, and include the external link in the <span class="mono">&lt;a href="[link]"&gt;</span></li>
+      </ul>
+      
+      
+    <hr>
+    <!-- ============== END: DOC SECTION - SECTIONS ============== -->
+
+    <!-- ============== DOC SECTION - SECTIONS ============== -->
+    <h3 id="sections"><strong>Sections</strong> - <a href="#toc">top</a></h3>
+
+      <p>Each website section is contained in an <span class="mono">&lt;article class="section-wrapper"&gt;</span> tag inside the <span class="mono">&lt;section id="main-content"&gt;</span>.</p>
+      <ul>
+        <li><strong>It is important that each section is given a unique id.</strong></li>
+        <li>You can set a custom background for each section by setting a "data-custom-background-img" attribute for the <span class="mono">&lt;article&gt;</span> tag. This should be a URL linking to a background image. (More information about the website background(s) is found in the section <a href="#backgrounds"><em>Page Background Images</em></a> below)
+        <li>The theme includes six types of sections:
+          <ul>
+            <li><strong>Intro Text</strong> - includes a header, a short paragraph, and can include a button.</li>
+            <li><strong>Text / Generic</strong> - includes generic content (text, images, etc).</li>
+            <li><strong>Carousel</strong> - includes a Bootstrap slider, with each slide containing an icon, text, and an optional button.</li>
+            <li><strong>Features Grid</strong> - includes a grid with separate feature items each having an icon and a short sentence.</li>
+            <li><strong>Featured Items</strong> - includes a maximum of 3 features consisting of a thumbnail and a short sentence. Each item may be linked.</li>
+            <li><strong>Contact</strong> - includes a short paragraph and a contact form. <em>(IMPORTANT: change the email address at the top of the assets/php/mail.php file to the email address that you want this form to send to)</em></li>
+          </ul>
+          You can edit/add to/remove/duplicate these sections how you prefer and according to your needs, as long as you give them each a unique id and don't change the following HTML structure for each section:
+          <xmp>
+  <article id="[section id]" class="section-wrapper clearfix" 
+    data-custom-background-img="[optional background image URL]">
+      <div class="content-wrapper clearfix">
+      [... content to edit ...]
+      </div>
+  </article>
+          </xmp>
+        </li>
+      </ul>
+
+      <h5><strong>Sections Intro/Reveal Animations</strong></h5>
+      <p><em>TWILLI Air</em> includes WOW.js and animate.css to create a smooth intro reveal effect when the user scrolls to each section.<br/>As explained on the <a href="http://mynameismatthieu.com/WOW/docs.html" target="_blank">WOW website</a>, you can add reveal animations to any html element:</p>
+      <ul>
+        <li>Pick an animation style in <a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a></li>
+        <li>Add the CSS class to any HTML element</li>
+      </ul>
+      <p>The template comes with reveal animations already set for the intro section at <span class="mono">&lt;div class="content-wrapper clearfix wow fadeInDown"&gt;</span>. You can edit this or add other effects to any other HTML elements inside the page.</p>
+      
+    <hr>
+    <!-- ============== END: DOC SECTION - SECTIONS ============== -->
+
+    <!-- ============== DOC SECTION - PAGE BACKGROUNDS ============== -->
+    <h3 id="backgrounds"><strong>Page Background Images</strong> - <a href="#toc">top</a></h3>
+      <p><img src="assets/images/twilli_bgs.JPG"></p>
+
+      <p>The theme is designed to have at least ONE high-resolution page background image, which stretches along the whole page.</p>
+      <p>To set the default page background image, insert the image URL in the <span class="mono">&lt;div id="outer-background-container"&gt;</span> at the beginning of the <span class="mono">&lt;body&gt;</span> tag, as indicated:
+        <xmp>
+    <div id="outer-background-container" 
+      data-default-background-img="[background image URL]"
+      style="background-image:url([repeat same background image URL]);">
+    </div>
+        </xmp>
+      As a fix for IE9 browsers, repeat same background image URL in the footer of the index.html file (Javascripts section), as indicated:
+        <xmp>
+    $(document).ready(function(){
+      jQuery("#outer-background-container")
+      .backstretch("[repeat same background image URL]");
+    });
+        </xmp>
+      </p>
+
+      <h5><strong>Custom Page Backgrounds for each section</strong></h5>
+      <p>The theme allows the possibility for the background image to change whenever a user scrolls to each section.</p>
+      <p>You can set a different background image for each section by including the image URL in the "data-custom-background-img" attribute for each <span class="mono">&lt;article class="section-wrapper"&gt;</span>. (Read <a href="#sections"><em>Sections</em></a> above for more about each section)</p>
+      <p>If no background image is specified for a section, the default background image is shown by default.</p>
+
+      <h5><strong>Semi-transparent black overlay</strong></h5>
+      <p>The theme design includes a semi-transparent patterned black overlay on top of the background images. This ensures that the white text is readable. If you want to remove this overlay, comment/remove the <span class="mono">&lt;div class="background-image-overlay"&gt;&lt;/div&gt;</span>.</p>
+
+      <h5><strong>Background Images on Mobile</strong></h5>
+      <p>The template is intended to show only one background image on mobile in order for the site to load faster and minimize the data being transferred. Although not recommended, you can still enable the background changes on scroll, on mobile, by doing the following:
+        <br/>In <strong>/assets/js/initialise-functions.js</strong>, search for the "ON WINDOW SCROLL", and <strong>remove</strong> the following exact text: <br/><span class="mono">&& !jQuery.browser.mobile</span></p>
+
+    <hr>
+    <!-- ============== END: DOC SECTION - PAGE BACKGROUNDS ============== -->
+
+    <!-- ============== DOC SECTION - POPUPS/MODALS ============== -->
+    <h3 id="popups"><strong>Content Popups</strong> - <a href="#toc">top</a></h3>
+
+      <p><img src="assets/images/twilli_popups.JPG"></p>
+
+      <p>Although <em>TWILLI Air</em> theme is intended to be minimalist as possible, you can still include more content in popups.</p>
+
+      <p>To add a new popup, create a <span class="mono">&lt;div class="content-to-populate-in-modal"&gt;</span> anywhere inside the page, give it a unique id, and insert content, as below:
+        <xmp>
+  <div class="content-to-populate-in-modal" id="[unique id]">
+    [... content which will be included in the popup ...]
+  </div>
+        </xmp>
+      </p>
+
+      <p>Then, to link a button/link to this popup, add an onClick event to the link/button as indicated below:
+        <xmp>
+  <a href="" onClick="populate_and_open_modal(event, '[unique id of popup content]', '[optional ID of section within popup to link to]', '[optional class to add to modal container]');" 
+    class="btn btn-outline-inverse btn-sm">read more</a>
+        </xmp>
+        <br/>
+      </p>
+
+      <h4><strong>Initialising custom Javascript functions after popup is open/closed</strong></h4>
+      <p>If you want to initialise a custom JS function <strong>after the popup is opened</strong>: In the JS file /assets/js/initialise-functions.js, add the following in the <strong>initialise_document_ready_functions()</strong>:
+        <xmp>$('#common-modal').on('shown.bs.modal', function()
+{
+   // function to initialise when popup is open
+});</xmp>
+
+    <p>If you want to initialise a custom JS function <strong>after the popup is closed</strong>: In the JS file /assets/js/initialise-functions.js, add the following in the <strong>initialise_document_ready_functions()</strong>:
+      <xmp>$("#common-modal").on('hide.bs.modal', function()
+{
+   // function to initialise when popup is closed
+});</xmp>
+
+    <p>Keep in mind the these two event handlers above apply EVERY TIME a popup is opened/closed.</br>
+    If you want to apply a custom Javascript function to a SINGLE POPUP (instead of all):</p>
+
+    <ol>
+      <li>Wrap the particular popup's content inside a container with a unique ID. Example:<br/>
+
+       <xmp><div class="content-to-populate-in-modal" ...... >
+   <div id="unique-id">
+       [POPUP Content]
+   </div>
+</div><!--.content-to-populate-in-modal--> </xmp></li>
+
+      <li>Then, modify the function that was added above in initialise-functions.js, as below:<br/>
+
+   <xmp>$('#common-modal').on('shown.bs.modal', function()
+{
+   if ($('#common-modal #unique-id').length > 0)
+   {    
+       // function to initialise when ONLY this popup is open
+   }
+}); </xmp></li>   
+  </ol>    
+
+    <hr>
+    <!-- ============== END: DOC SECTION - POPUPS/MODALS ============== -->
+
+    <!-- ============== DOC SECTION - CAROUSEL ============== -->
+    <h3 id="carousel"><strong>Carousel</strong> - <a href="#toc">top</a></h3>
+
+      <p><img src="assets/images/twilli_carousel.JPG"></p>
+
+      <p><em>TWILLI Air</em> theme includes a Bootstrap carousel in one of the sections (<span class="mono">&lt;article id="carousel"&gt;</span>).
+      </p>
+      <p>Each carousel within the page should consist of the following (taking our example as guide):</p>
+      <ul>
+        <li>The carousel is contained inside a container as below:
+          <xmp>
+  <div id="[unique id for each carousel]" 
+    class="carousel slide with-title-indicators max-height" 
+    data-height-percent="70" data-ride="carousel">
+    [...]
+          </xmp>
+          The unique id is important, and needs to be initialised in the JS file /assets/js/initialise-functions.js, as below:
+          <xmp>    
+    $('#[unique id for each carousel]').carousel({ [...] });    
+          </xmp>      
+          The "data-height-percent" attribute is optional, and set the percentage height that the carousel should have in proportion of the window height (on large, non-mobile viewports).
+        </li>
+        <li>The carousel includes indicators (slide titles as navigation):<br/>
+          <img src="assets/images/twilli_carousel_indicators.JPG"><br/>
+        These are found inside <span class="mono">&lt;ol class="carousel-indicators title-indicators"&gt;</span>, and should represent all the carousel slides.<br/>It is important that the "data-target" attribute for each indicator is the unique id of the carousel.</li>
+        <li>Each carousel slide is found inside <span class="mono">&lt;div class="carousel-inner"&gt;</span>, as follows:
+          <xmp>    
+    <div class="carousel-inner">
+
+      <!-- slide -->
+      <div class="item active">
+        <div class="carousel-text-content">
+          [... custom slide content ...]
+        </div>
+      </div><!-- end: slide -->
+
+    </div>    
+          </xmp>            
+        </li>
+        <li>The carousel includes navigation left/right arrows to move from one slide to another. These are found at the bottom of the carousel container:
+          <xmp>    
+    <a class="left carousel-control" 
+      href="#[unique id for each carousel]" data-slide="prev"></a>
+    <a class="right carousel-control" 
+      href="#[unique id for each carousel]" data-slide="next"></a>  
+          </xmp>  
+          It is important that the "href" attribute for each link is the unique id of the carousel.</li>
+      </ul>
+
+    <hr>
+    <!-- ============== END: DOC SECTION - CAROUSEL ============== -->
+
+    <!-- ============== DOC SECTION - IMAGE CAROUSEL IN POPUP ============== -->
+    <h3 id="imagecarousel"><strong>Image Carousel in Popup</strong> - <a href="#toc">top</a></h3>
+
+      <p><img src="assets/images/twilli_imagecarousel.JPG"></p>
+
+      <p>The theme also includes <a href="http://www.owlgraphic.com/owlcarousel/" target="_blank"><em>Owl Carousel</em></a>, a responsive slider/carousel which allows you to create elegant image sliders.</p>
+
+      <p>In <em>TWILLI Air</em>, <em>Owl Carousel</em> can be placed inside a popup (see section <a href="#popups"><em>Content Popups</em></a> above), and initialised when the popup is opened.</p>
+
+      <p>The content for the image carousel is placed inside the <span class="mono">&lt;div class="content-to-populate-in-modal"&gt;</span> as below:</p>
+
+          <xmp>
+<div class="content-to-populate-in-modal" id="[modal-id]">  
+  <!-- Owl Carousel Start -->        
+  <div id="unique-id-for-image-slider" class="owl-carousel popup-image-gallery">
+    
+    <!-- slide -->
+    <div>
+      <h6 class="caption">Caption for Image 1</h6>
+      <img class="lazyOwl" data-src="assets/images/other_images/bg1.jpg">
+    </div>
+
+    [...]
+
+  </div>
+  <!-- Owl Carousel End -->    
+</div><!-- .content-to-populate-in-modal -->
+          </xmp>
+
+      <p>Every <em>Owl Carousel</em> which are found inside a popup and have a class of ".popup-image-gallery" are initialised in the /js/initialise-functions.js when the popup is visible, using the Bootstrap "shown.bs.modal" carousel event handler:</p>
+
+      <xmp>
+  $('#common-modal').on('shown.bs.modal', function()
+  {
+    [Owl Carousel parameters]
+  });
+      </xmp>
+
+      <p>The <em>Owl Carousel</em> parameters here can be modified how you want. More information on these can be found on the <em>Owl Carousel</em> website: <a href="http://www.owlgraphic.com/owlcarousel/" target="_blank">www.owlgraphic.com/owlcarousel</a></p>
+
+      <p>Since the carousel is in a popup, an extra function in /js/initialise-functions.js destroys the carousel when the popup is closed (it would be re-initialised when popup is re-opened). This is done using the Bootstrap "hide.bs.modal" carousel event handler and the <em>Owl Carousel</em> destroy() function:</p>
+
+      <xmp>
+  $('#common-modal').on('hide.bs.modal', function()
+  {
+    [...]
+  });
+      </xmp>     
+
+      <h4><strong>Alternative Image Gallery Carousel</strong></h4>
+
+      <p><img src="assets/images/twilli_altimagecarousel.JPG"></p>  
+      
+      <p>The template also offers an alternative image gallery carousel inside a popup. Similar to the instructions mentioned above, the content for the alternative image carousel is placed inside the <span class="mono">&lt;div class="content-to-populate-in-modal"&gt;</span> as below:</p>
+
+      <xmp>
+<div class="content-to-populate-in-modal" id="[modal-id]">  
+  <!-- Owl Carousel Start -->        
+  <div id="unique-id-for-alt-image-slider" class="owl-carousel popup-alt-image-gallery">
+    
+    <!-- image item -->
+    <div class="item"><a href="[URL of image to open on click]" data-lightbox="popup-alt-gallery"><img class="lazyOwl" data-src="[URL of image thumbnail]"></a></div>
+
+    [...]
+
+  </div>
+  <!-- Owl Carousel End -->    
+</div><!-- .content-to-populate-in-modal -->
+          </xmp>   
+
+      <p>Every alternative image gallery which are found inside a popup and have a class of ".popup-alt-image-gallery" are initialised in the /js/initialise-functions.js when the popup is visible, using the Bootstrap "shown.bs.modal" carousel event handler, as described above.</p>   
+
+      <p>Please note that although <em>TWILLI Air</em> comes with this type of image carousel INSIDE a popup, you can still use <em>Owl Carousel</em> anywhere in the theme where you want. If you want to do so, or to create a different carousel with different parameters, use the same HTML described above but remove the class ".popup-image-gallery". Then, intialise it in /js/initialise-function.js or at the footer of the page using the unique ID of that particular carousel instead of the class.</p>
+
+
+    <hr>
+    <!-- ============== END: DOC SECTION - IMAGE CAROUSEL IN POPUP ============== -->
+
+    <!-- ============== DOC SECTION - CONTACT FORM ============== -->
+    <h3 id="contact_form"><strong>Contact Form</strong> - <a href="#toc">top</a></h3>
+
+      <p><img src="assets/images/twilli_form.JPG"></p>
+
+      <p><strong>When installing this theme, it is important to change the 2 email addresses at the top of the assets/php/mail.php file:</strong></p>
+
+      <ul>
+        <li><strong>$email_to</strong> - the email address that you want this form to send to.</li>
+        <li><strong>$email_from</strong> - the "From:" email address with which form submissions are sent (important that it has the same domain as the domain of your site - unless you have configured your server's mail settings)</li>
+      </ul>
+
+      <p>The form includes the following fields:</p>
+      <ul>
+        <li><strong>Full Name</strong> - required</li>
+        <li><strong>Email Address</strong> - required</li>
+        <li><strong>Contact Number</strong></li>
+        <li><strong>Message</strong> - required</li>
+      </ul>
+
+      <p>The form also includes a CAPTCHA, intended to filter spam. The captcha only works if a PHP server is set (locally you need to use a tool like XAMPP, WAMP, or MAMP).</p>
+
+    <hr>
+    <!-- ============== END: DOC SECTION - CAROUSEL ============== -->
+
+    <!-- ============== DOC SECTION - SCALABLE FONT ICONS ============== -->
+    <h3 id="font_icons"><strong>Scalable Font Icons</strong> - <a href="#toc">top</a></h3>
+
+    <p><em>TWILLI Air</em> makes use of two scalable font icon sets:</p>
+    <ul>
+      <li>Glyphicons</li>
+      <li>Font Awesome</li>
+    </ul>
+    <h4><strong>Glyphicons</strong></h4>
+    <p><strong>To add a <em>Glyphicons</em> icon, use the following code:</strong><br/>
+    <span class="mono">&lt;span class="glyphicon glyphicon-[icon id]">&lt;/span&gt;</span>, OR:<br/>
+    <span class="mono">&lt;i class="glyphicon glyphicon-[icon id]">&lt;/i&gt;</span></p>
+    <p><strong>The full list of the available icons and their IDs can be found on: <a href="http://getbootstrap.com/components/#glyphicons" target="_blank">getbootstrap.com/components</a>.</strong></p>
+
+    <h4><strong>Font Awesome</strong></h4>
+    <p><strong>To add a <em>Font Awesome</em> icon, use the following code:</strong><br/>
+    <span class="mono">&lt;span class="fa fa-[icon id]">&lt;/span&gt;</span>, OR:<br/>
+    <span class="mono">&lt;i class="fa fa-[icon id]">&lt;/i&gt;</span></p>
+    <p><strong>The full list of the available icons and their IDs can be found on: <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">fortawesome.github.io/Font-Awesome/icons/</a>.</strong></p>
+
+    <p>Remember that these icons should be treated as "text" rather than an "image icon". This means that if, for example you want to change their colour, you should use the CSS "color" rule, as you do to any text. If you want to increase their size, you have to alter their "font-size" value... and so on. </p>
+      
+      
+    <hr>
+    <!-- ============== END: DOC SECTION - SCALABLE FONT ICONS ============== -->
+
+    <!-- ============== DOC SECTION - SOCIAL ICONS ============== -->
+    <h3 id="social_icons"><strong>Social Icons</strong> - <a href="#toc">top</a></h3>
+
+      <p><img src="assets/images/twilli_social_icons.JPG"></p>
+
+      <p>To edit the social icons list, you have to look for the <span class="mono">&lt;ul class="social-icons"&gt;</span>.</p>
+      <ul>
+        <li>Each social icon item should follow this format:
+<xmp><li><a href="[social page link URL]" target="_blank" title="[social website]">
+  <img src="assets/images/theme_images/social_icons/[social website].png" alt="[social website]">
+</a></li></xmp>
+        </li>
+        <li>A list of social icons options (which are used in the <span class="mono">&lt;img&gt;</span>) is found in the directory /assets/images/theme_images/social_icons/</li>
+      </ul>
+      
+      
+    <hr>
+    <!-- ============== END: DOC SECTION - SOCIAL ICONS ============== -->
+
+    <!-- ============== DOC SECTION - CREDITS ============== -->
+    <h3 id="credits"><strong>Sources and Credits</strong> - <a href="#toc">top</a></h3>
+
+      <h5>Resources:</h5>
+      <ul>
+        <li>jQuery 1.11.2 - <a href="http://jquery.com/" target="_blank">http://jquery.com/</a></li>
+        <li>Bootstrap 3.3.1 - <a href="http://getbootstrap.com/" target="_blank">http://getbootstrap.com/</a></li>
+        <li>jQuery Easing 1.3 - <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">http://gsgd.co.uk/sandbox/jquery/easing/</a></li>
+        <li>Backstretch - <a href="http://srobbin.com/jquery-plugins/backstretch/" target="_blank">http://srobbin.com/jquery-plugins/backstretch/</a></li>
+        <li>Owl Carousel 1.3.2 - <a href="http://www.owlgraphic.com/owlcarousel/" target="_blank">http://www.owlgraphic.com/owlcarousel/</a></li>
+        <li>Detect Mobile Browsers - <a href="http://detectmobilebrowser.com/" target="_blank">http://detectmobilebrowser.com/</a></li>
+        <li>Font Awesome 4.2.0 - <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">http://fortawesome.github.io/Font-Awesome/</a></li>
+        <li>Lightbox 2.7.1 - <a href="http://lokeshdhakar.com/projects/lightbox2/" target="_blank">http://lokeshdhakar.com/projects/lightbox2/</a></li>
+      </ul>
+
+      <h5>Fonts:</h5>
+      <ul>
+        <li>Google Fonts - <a href="https://www.google.com/fonts" target="_blank">https://www.google.com/fonts</a></li>
+        <li>Font Squirrel - <a href="http://www.fontsquirrel.com/" target="_blank">http://www.fontsquirrel.com/</a></li>
+      </ul>
+
+      <h5>Images:</h5>
+      <ul>
+        <li>Morguefile - <a href="http://www.morguefile.com/" target="_blank">http://www.morguefile.com/</a></li>
+        <li>iconmonstr - <a href="http://iconmonstr.com/" target="_blank">http://iconmonstr.com/</a></li>
+      </ul>
+        
+      
+    <hr>
+    <!-- ============== END: DOC SECTION - CREDITS ============== -->
+    
+    
+    <p class="append-bottom alt large"><strong>TWILLI Themes</strong></p>
+    <p><a href="#toc">Go To Table of Contents</a></p>
+    
+    <hr class="space">
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TWILLI | Air - Changelog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
+    <style type="text/css" media="screen">
+      p, table, hr, .box { margin-bottom:25px; }
+      .box p { margin-bottom:10px; }
+      xmp { font-size:1.05em; }
+      .mono { font-family: monospace; font-size:1.05em; }
+    </style>    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="jumbotron">
+        <h2>TWILLI | Air</h2>
+        <h5>Changelog by &ldquo;Twilli Themes&rdquo;</h5>
+      </div>
+
+
+    <h2 id="toc" class="alt">Table of Contents</h2>
+    <ol class="alpha">
+      <li><a href="#v1_2_3">Version 1.2.3</a></li>
+      <li><a href="#v1_2_2">Version 1.2.2</a></li>
+      <li><a href="#v1_2_1">Version 1.2.1</a></li>
+      <li><a href="#v1_2">Version 1.2</a></li>
+      <li><a href="#v1_1">Version 1.1</a></li>
+    </ol>
+    
+    <hr>
+    
+    <!-- ============== DOC SECTION - VERSION 1.2.3 ============== -->
+    <h3 id="v1_2_3"><strong>Version 1.2.3</strong> - <a href="#toc">top</a></h3>
+
+      <h5>December 2014</h5>
+
+      <p><strong style="text-decoration:underline">Keep a separate backup of your current website before applying the following update.</strong></p>
+
+      <h4>Changes/Updates:</h4>
+      <ul>
+        <li>Fixes a bug with the CAPTCHA refresh link.</li>
+        <li>Forms can now be used inside modals (popups).</li>
+        <li>Update of jQuery version 1.11.2</li>
+      </ul>
+      <br/>
+
+      <h4>New Files:</h4>
+      <p><em>Place the following new files inside your website's root.</em></p>
+      <ul>
+        <li><strong>/assets/js/jquery-1.11.2.min.js</strong></li>
+      </ul>
+      <br/>
+
+      <h4>Updated Files:</h4>
+      <p><em><strong>First keep a separate backup of your current version of these files.</strong> Then it is recommended to use a file comparison tool (ex: WinMerge, FileMerge, etc) to separately merge the updated files with your current version of the same files.</em></p>
+      <ul>
+        <li><strong>index.html and index_w_extra_comments.html</strong>
+          <ul>
+            <li>Added "clearfix" class to .modal-body</li>
+            <li>Changed references to jQuery 1.11.2 version (javascripts section)</li>
+          </ul>
+        </li>
+        <li><strong>/assets/css/styles.css</strong>
+          <ul>
+            <li>Updates to: all .form-style rules (Lines 1169 - 1350)</li>
+          </ul>
+        </li>        
+        <li><strong>/assets/js/functions.js</strong>
+          <ul>
+            <li>Updated function: validate_and_submit_forms</li>
+            <li>New functions: reset_forms, reset_captcha</li>
+          </ul>
+        </li>
+        <li><strong>/assets/js/initialise-functions.js</strong>
+          <ul>
+            <li>Updated function: initialise_document_ready_functions ('On Opening Popups', 'On Closing Popups' sections)</li>
+          </ul>
+        </li>
+        <li><strong>js/functions.min.js</strong> - <em>if you have made extra changes to functions.js before this update, you'll need to re-minify it again after applying this update, using a tool like <a href="http://alphapixels.com/prepros/" target="_blank">Prepros</a></em></li>
+      </ul>
+
+    <hr>
+    <!-- ============== END: DOC SECTION - VERSION 1.2.3 ============== -->
+
+    <!-- ============== DOC SECTION - VERSION 1.2.2 ============== -->
+    <h3 id="v1_2_2"><strong>Version 1.2.2</strong> - <a href="#toc">top</a></h3>
+
+      <h5>November 2014</h5>
+
+      <p><strong style="text-decoration:underline">Keep a separate backup of your current website before applying the following update.</strong></p>
+
+      <h4>Changes/Updates:</h4>
+      <ul>
+        <li>Fixes a bug causing an incorrect image count when opening a gallery image with Lightbox.</li>
+        <li>Embedding responsive video players (YouTube, Vimeo) is now possible.</li>
+        <li>Update of Bootstrap to v3.3.1.</li>
+        <li>Minor optimisations and fixes.</li>
+      </ul>
+      <br/>
+
+      <h4>New Files:</h4>
+      <p><em>Place the following new files inside your website's root.</em></p>
+      <ul>
+        <li><strong>/assets/js/jquery.fitvids.js</strong></li>
+      </ul>
+      <br/>
+
+      <h4>Completely Replaced Files:</h4>
+      <p><em>Replace your version of the following files with the new version of the following files.</em></p>
+      <ul>
+        <li>/assets/bootstrap</li>
+      </ul>
+      <br/>
+
+      <h4>Updated Files:</h4>
+      <p><em><strong>First keep a separate backup of your current version of these files.</strong> Then it is recommended to use a file comparison tool (ex: WinMerge, FileMerge, etc) to separately merge the updated files with your current version of the same files.</em></p>
+      <ul>
+        <li><strong>index.html and index_w_extra_comments.html</strong>
+          <ul>
+            <li>The main changes are in the bottom Javascripts section.</li>
+          </ul>
+        </li>
+        <li><strong>/assets/css/styles.css</strong>
+          <ul>
+            <li>Updates to: #outer-background-container, .backstretch, #main-content</li>
+          </ul>
+        </li>
+        <li><strong>/assets/js/functions.js</strong>
+          <ul>
+            <li>Updated function: populate_and_open_modal</li>
+            <li>New function: modal_backdrop_height</li>
+            <li>Removed function: fixed_bg_image_dimensions_on_mobile</li>
+          </ul>
+        </li>
+        <li><strong>/assets/js/initialise-functions.js</strong>
+          <ul>
+            <li>Updated function: initialise_document_ready_functions ('responsive videos', 'On Opening Popups' sections)</li>
+          </ul>
+        </li>
+        <li><strong>js/functions.min.js</strong> - <em>if you have made extra changes to functions.js before this update, you'll need to re-minify it again after applying this update, using a tool like <a href="http://alphapixels.com/prepros/" target="_blank">Prepros</a></em></li>
+      </ul>
+
+    <hr>
+    <!-- ============== END: DOC SECTION - VERSION 1.2.2 ============== --> 
+
+    <!-- ============== DOC SECTION - VERSION 1.2.1 ============== -->
+    <h3 id="v1_2_1"><strong>Version 1.2.1</strong> - <a href="#toc">top</a></h3>
+
+      <h5>September 2014</h5>
+
+      <h4>Changes/Updates:</h4>
+      <ul>
+        <li>Added CAPTCHA to contact form.</li>
+        <li>New alternative image gallery carousel inside popup.</li>
+        <li>Update of Bootstrap to v3.2.0</li>
+        <li>Update of Font Awesome to v4.2.0</li>
+        <li>Minor optimisations and fixes.</li>
+      </ul>
+      <br/>
+
+      <h4>New Files:</h4>
+      <p><em>Place the following new files inside your website's root.</em></p>
+      <ul>
+        <li>/assets/css/custom.css - <em>include your custom styles for your website here.</em></li>
+        <li>/assets/images/other_images/gallery-thumb-[1 to 6].jpg</li>
+        <li>/assets/js/lightbox/</li>
+        <li>/assets/php/form_captcha/</li>
+      </ul>
+      <br/>
+
+      <h4>Completely Replaced Files:</h4>
+      <p><em>Replace your version of the following files with the new version of the following files.</em></p>
+      <ul>
+        <li>/assets/bootstrap/</li>
+        <li>/assets/css/font-awesome/</li>
+        <li>/documentation/</li>
+      </ul>
+      <br/>
+
+      <h4>Updated Files:</h4>
+      <p><em><strong>First keep a separate backup of your current version of these files.</strong> Then it is recommended to use a file comparison tool (ex: WinMerge) to separately merge the updated files with your current version of the same files.</em></p>
+      <ul>
+        <li>/assets/css/styles.css</li>
+        <li>/assets/js/functions.js</li>
+        <li>/assets/js/functions.min.js - <em>if you have made extra changes to functions.js, you'll need to re-minify it again using a tool like <a href="http://alphapixels.com/prepros/" target="_blank">Prepros</a></em></li>
+        <li>/assets/js/initialise-functions.js</li>
+        <li>/assets/php/mail.php</li>
+        <li>index.html and index_w_extra_comments.html - <em>the main changes are in the head section and at the bottom js scripts section.</em></li>
+      </ul>
+
+    <hr>
+    <!-- ============== END: DOC SECTION - VERSION 1.2.1 ============== --> 
+
+    <!-- ============== DOC SECTION - VERSION 1.2 ============== -->
+    <h3 id="v1_2"><strong>Version 1.2</strong> - <a href="#toc">top</a></h3>
+
+      <h5>22nd June 2014</h5>
+
+      <h4>Changes/Updates:</h4>
+      <ul>
+        <li>New changelog page with more information about the TWILLI Air updates.</li>
+        <li>Update of jQuery script version from 1.10.2 to 1.11.1</li>
+        <li>Fixed problem with opening popups on IE8 (IE8 is still not supported).</li>
+        <li>Linking to a section inside a popup is now possible.</li>
+        <li>Minor optimisation to the contact form.</li>
+        <li>Added subtle intro reveal animation (WOW.js + Animate.css), which can be applied to any sections.</li>
+        <li>Improvements to Bootstrap Elements' styling.</li>
+        <li>Added Font Awesome 4.1.0 for more scalable icons.</li>
+      </ul>
+
+      <h4>New Files:</h4>
+      <ul>
+        <li>/documentation/changelog.html</li>
+        <li>/assets/css/font-awesome/</li>
+        <li>/assets/js/jquery-1.11.1.min.js</li>
+        <li>/assets/js/wow/</li>
+      </ul>
+
+      <h4>Updated Files:</h4>
+      <ul>
+        <li>/index.html</li>
+        <li>/index_w_extra_comments.html</li>
+        <li>/assets/css/styles.css</li>
+        <li>/assets/js/functions.js</li>
+        <li>/assets/js/functions.min.js</li>
+        <li>/assets/php/mail.php</li>
+      </ul>
+
+    <hr>
+    <!-- ============== END: DOC SECTION - VERSION 1.2 ============== --> 
+
+    <!-- ============== DOC SECTION - VERSION 1.2 ============== -->
+    <h3 id="v1_1"><strong>Version 1.1</strong> - <a href="#toc">top</a></h3>
+
+      <h5>22nd March 2014</h5>
+
+      <ul>
+        <li>Added an image gallery carousel/slider which can be used in popups (Owl Carousel)</li>
+      </ul>
+
+    <hr>
+    <!-- ============== END: DOC SECTION - VERSION 1.2 ============== -->    
+
+        
+      
+    <hr>
+    <!-- ============== END: DOC SECTION - CREDITS ============== -->
+    
+    
+    <p class="append-bottom alt large"><strong>TWILLI Themes</strong></p>
+    <p><a href="#toc">Go To Table of Contents</a></p>
+    
+    <hr class="space">
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
