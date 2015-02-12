@@ -1,0 +1,29 @@
+{
+  "name": "flocks.rocks",
+  "version": "0.0.1",
+  "description": "The flocks.rocks promotional website for Flocks.JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StoneCypher/flocks.rocks.git"
+  },
+  "keywords": [
+    "flocks",
+    "flocks.js",
+    "flocks.rocks",
+    "stonecypher",
+    "haugeland",
+    "react",
+    "react.js",
+    "tutorial"
+  ],
+  "author": "John Haugeland",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StoneCypher/flocks.rocks/issues"
+  },
+  "homepage": "https://github.com/StoneCypher/flocks.rocks"
+}
