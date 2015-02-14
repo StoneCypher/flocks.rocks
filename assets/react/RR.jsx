@@ -3,10 +3,11 @@
 
 "use strict";
 
-var React = require("react"),
-    LSide = require("./LeftSidebar"),
+var React  = require("react"),
+    LSide  = require("./LeftSidebar"),
+    ForkMe = require("./ForkMe"),
 
-    RR    = React.createClass({
+    RR     = React.createClass({
 
       render: function() {
         return (
@@ -23,6 +24,8 @@ var React = require("react"),
               <h1>This site has not yet been made.</h1>
 
                 <p>Tutorials coming <i>very</i> soon now.</p>
+
+              <ForkMe/>
 
             </div>
 
