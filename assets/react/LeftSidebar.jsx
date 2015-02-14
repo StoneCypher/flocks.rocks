@@ -15,12 +15,12 @@ var React       = require("react"),
 
             <a href="#" className="section-end"><div id="ls-logo">FLOCKS<br/><small>ROCKS</small></div></a>
 
+            <a href="#">What is <b>Flocks</b>?</a>
+            <a href="#" className="section-end">What is <b>React</b>?</a>
+
             <a href="#"><b>Examples</b></a>
             <a href="#"><b>Quick Start</b></a>
             <a href="#" className="section-end"><b>Documentation</b></a>
-
-            <a href="#">What is <b>Flocks</b>?</a>
-            <a href="#" className="section-end">What is <b>React</b>?</a>
 
             <a href="#"><b>Flocks</b> Tutorial</a>
             <a href="#">Flocks <b>TodoMVC</b></a>
