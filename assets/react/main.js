@@ -1,7 +1,7 @@
 
 /* eslint-env node,browser */
 
-(function() {
+(function(Content) {
 
     "use strict";
 
@@ -9,9 +9,9 @@
         RR    = require("RR");
 
     function loadHandler() {
-        React.render(React.createFactory(RR)({'a':'b'}), document.getElementById('host'));
+      React.render(React.createFactory(RR)({'content':Content, 'page':'index.html'}), document.getElementById('host'));
     }
 
     document.addEventListener("DOMContentLoaded", loadHandler, false);
 
-}());
+}(content));

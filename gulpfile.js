@@ -11,6 +11,7 @@ var path       = require("path"),
     source     = require("vinyl-source-stream"),
     browserify = require("browserify"),
     reactify   = require("reactify"),
+    remarkable = require("remarkable"),
 
     targets    = require("./assets/react/targets.js"),
     dirs       = require("./config/dirs.js");
@@ -103,13 +104,16 @@ gulp.task("build-html", ["make-directories"], function() {
 
       content  = {},
 
+      md       = new remarkable(),
+
       makePage = function(Content, Script) {
         return start + Script + middle + Content + end;
       };
 
   targets.map(function(X) {
     X.map(function(Y) {
-      content[Y.url] = fs.readFileSync("./assets/page_md/" + Y.url + ".md",  "utf8");
+      var rawContent = fs.readFileSync("./assets/page_md/" + Y.url + ".md",  "utf8");
+      content[Y.url] = md.render(rawContent);
     });
   });
 
