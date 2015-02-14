@@ -1,1 +1,1 @@
-Index markdown stub
+Index markdown stub " ' { } " ' { } /? \? /* */ <!-- whoa --> </script>

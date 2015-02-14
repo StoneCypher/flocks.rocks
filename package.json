@@ -35,6 +35,7 @@
     "gulp-uglify": "*",
     "react": "*",
     "reactify": "*",
+    "remarkable": "*",
     "vinyl-source-stream": "*"
   }
 }

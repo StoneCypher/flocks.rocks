@@ -113,8 +113,17 @@ gulp.task("build-html", ["make-directories"], function() {
     });
   });
 
+  var script;
   for (var page in content) {
-    fs.writeFileSync("./build/publish/" + page, makePage(content[page], '/* script */'));
+
+    var json_content = JSON.stringify(content);
+    var fix_closer   = new RegExp('<', 'g'); // because </script> in a string still terminates the script
+    var safe_json    = json_content.replace(fix_closer, '\\x3c'); // so replace < with its unicode escape
+
+    var tscript = 'var content = ' + safe_json + ';';
+
+    fs.writeFileSync("./build/publish/" + page, makePage(content[page], tscript));
+
   }
 
 });
@@ -153,7 +162,6 @@ gulp.task("arrange-publish", ["prod-build"], function() {
 
   return gulp.src([
 
-//  dir("html")        + "**/*",
     dir("theme")       + "**/background*.png",
     dir("background")  + "**/bg*.jpg",
     dir("built_css")   + "**/*",
