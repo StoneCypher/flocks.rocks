@@ -12,9 +12,12 @@ var path       = require("path"),
     browserify = require("browserify"),
     reactify   = require("reactify"),
     remarkable = require("remarkable"),
+    jsx        = require("node-jsx").install({"extension" : ".jsx", "harmony" : true}),
 
-    targets    = require("./assets/react/targets.js"),
-    dirs       = require("./config/dirs.js");
+    dirs       = require("./config/dirs.js"),
+
+    targets    = require(dirs.assets + "react/targets.js"),
+    rr_jsx     = require(dirs.react  + "RR.jsx");
 
 
 
