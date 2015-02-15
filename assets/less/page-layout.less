@@ -2,11 +2,9 @@
 @import "sizings.less";
 
 html, body, #host, #page, * { margin: 0; padding: 0; border: 0; line-height: 100%; }
-html, body, #host           { height: 100%; overflow: hidden; font-family: Open Sans, sans-serif; font-weight: 300; }
+html, body, #host           { height: 100%; overflow: hidden; font-family: Open Sans, sans-serif, segoe ui emoji, segoe ui symbol; font-weight: 300; }
 
 #host             { position: fixed; top: 0; bottom: 0; left: 0; right: 0; }
 #page, #overlay   { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
 
 #content          { position: absolute; top: 0; bottom: 0; right: 0; left: @sidewidth; padding: 0 @sidegap 0 (2*@sidegap); padding-top: @toppad; overflow: auto; }
-
-strong { font-weight: 600; }

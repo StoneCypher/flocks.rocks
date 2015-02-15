@@ -1,12 +1,22 @@
 
-h1, p   { color: white; text-shadow: 1px 1px 1px #000; }
+h1, h2, p,
+ul, ol     { color: white; text-shadow: 1px 1px 1px #000; }
 
-h1 + p  { margin-top: 2em; }
-p + p   { margin-top: 1em; }
-p + h1  { margin-top: 2em; }
+p + p      { margin-top: 1em; }
+h1+p, h2+p { margin-top: 2em; }
+p+h1, p+h2 { margin-top: 2em; }
 
-h1      { font-size: 58px; font-weight: 600; padding-bottom: 0.2em; border-bottom: 1px solid rgba(255,255,255, 0.4); }
-p       { font-size: 26px; line-height: 37px; }
+h1,h2      { font-weight: 600; padding-bottom: 0.2em; border-bottom: 1px solid rgba(255,255,255, 0.4); }
+h1         { font-size: 58px; }
+h2         { font-size: 50px; }
 
-a       { color: #ace;    text-decoration: none;      text-shadow: 1px 1px 1px #000; }
-a:hover { color: #f0f8ff; text-decoration: underline; }
+p, ul, ol  { font-size: 26px; line-height: 37px; max-width: 45em; }
+
+ul, ol     { margin: 0.5em 0 0.5em 2em; padding: 0; }
+
+a          { color: #ace;    text-decoration: none;      text-shadow: 1px 1px 1px #000; }
+a:hover    { color: #f0f8ff; text-decoration: underline; }
+
+strong     { font-weight: 600; }
+
+tt, code   { font-family: Inconsolata, monospace; font-size: 110%; color: #def; }
