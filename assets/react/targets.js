@@ -34,6 +34,13 @@ module.exports = [
     { url        : "flocks_quick_start.html",
       link_text  : "<b>Quick start</b>",
       page_title : "Quick Start"
+    }
+  ],
+
+  [
+    { url        : "flocks_api_overview.html",
+      link_text  : "<b>API Overview</b>",
+      page_title : "Flocks Docs"
     },
 
     { url        : "flocks_docs.html",
