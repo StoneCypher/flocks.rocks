@@ -33,6 +33,7 @@
     "gulp-clean": "*",
     "gulp-less": "*",
     "gulp-uglify": "*",
+    "highlight.js": "*",
     "node-jsx": "*",
     "react": "*",
     "reactify": "*",

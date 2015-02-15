@@ -12,8 +12,10 @@ var path       = require("path"),
     browserify = require("browserify"),
     react      = require("react"),
     reactify   = require("reactify"),
-    remarkable = require("remarkable"),
     jsx        = require("node-jsx").install({"extension" : ".jsx", "harmony" : true}),
+
+    remarkable = require("remarkable"),
+    hl_js      = require("highlight.js"),
 
     dirs       = require("./config/dirs.js"),
 
@@ -106,11 +108,23 @@ gulp.task("build-html", ["make-directories"], function() {
 
       content  = {},
 
-      md       = new remarkable(),
+      hl       = function(str, lang) {
+                   if (lang && hl_js.getLanguage(lang)) {
+                     try         { return hl_js.highlight(lang, str).value; }
+                     catch (err) {}
+                   }
+
+                   try         { return hl_js.highlightAuto(str).value; }
+                   catch (err) {}
+
+                   return ''; // use external default escaping
+                 },
+
+      md       = new remarkable({ 'highlight': hl }),
 
       makePage = function(Content, Script) {
-        return start + Script + middle + Content + end;
-      };
+                   return start + Script + middle + Content + end;
+                 };
 
   targets.map(function(X) {
     X.map(function(Y) {

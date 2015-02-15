@@ -1,22 +1,32 @@
 
 h1, h2, p,
-ul, ol     { color: white; text-shadow: 1px 1px 1px #000; }
+ul, ol        { color: white; text-shadow: 1px 1px 1px #000; }
 
-p + p      { margin-top: 1em; }
-h1+p, h2+p { margin-top: 2em; }
-p+h1, p+h2 { margin-top: 2em; }
+p + p         { margin-top: 1em; }
+h1+p, h2+p    { margin-top: 2em; }
+p+h1, p+h2    { margin-top: 2.5em; }
 
-h1,h2      { font-weight: 600; padding-bottom: 0.2em; border-bottom: 1px solid rgba(255,255,255, 0.4); }
-h1         { font-size: 58px; }
-h2         { font-size: 50px; }
+h1,h2         { font-weight: 600; padding-bottom: 0.2em; border-bottom: 1px solid rgba(255,255,255, 0.4); }
+h1            { font-size: 58px; }
+h2            { font-size: 50px; }
 
-p, ul, ol  { font-size: 26px; line-height: 37px; max-width: 45em; }
+p, ul, ol     { font-size: 26px; line-height: 37px; max-width: 45em; }
 
-ul, ol     { margin: 0.5em 0 0.5em 2em; padding: 0; }
+ul, ol        { margin: 0.5em 0 1em 2em; padding: 0; }
+li            { margin-bottom: 0.25em; }
 
-a          { color: #ace;    text-decoration: none;      text-shadow: 1px 1px 1px #000; }
-a:hover    { color: #f0f8ff; text-decoration: underline; }
+a             { color: #ace;    text-decoration: none;      text-shadow: 1px 1px 1px #000; }
+a:hover       { color: #f0f8ff; text-decoration: underline; }
 
-strong     { font-weight: 600; }
+strong        { font-weight: 600; }
 
-tt, code   { font-family: Inconsolata, monospace; font-size: 110%; color: #def; }
+tt, code, pre { font-family: Inconsolata, monospace; font-size: 110%; }
+tt, code      { color: #def; }
+
+pre           { font-size: 32px; margin: 0.5em; }
+pre code      { display: block; padding: 0.5em; background-color: #042029; color: #839496; }
+
+.hljs-keyword { color: #268BD2; }
+.hljs-number  { color: #269186; }
+.hljs-string  { color: #269186; }
+
