@@ -10,6 +10,7 @@ var path       = require("path"),
 
     source     = require("vinyl-source-stream"),
     browserify = require("browserify"),
+    react      = require("react"),
     reactify   = require("reactify"),
     remarkable = require("remarkable"),
     jsx        = require("node-jsx").install({"extension" : ".jsx", "harmony" : true}),
@@ -125,9 +126,11 @@ gulp.task("build-html", ["make-directories"], function() {
     var fix_closer   = new RegExp('<', 'g'); // because </script> in a string still terminates the script
     var safe_json    = json_content.replace(fix_closer, '\\x3c'); // so replace < with its unicode escape
 
-    var tscript = 'var content = ' + safe_json + ';';
+    var tscript      = 'var sstate={\'page\':\'' + page + '\',\'content\':' + safe_json + '};';
 
-    fs.writeFileSync("./build/publish/" + page, makePage(content[page], tscript), "utf8");
+    var jsx_content  = react.renderToString(react.createFactory(rr_jsx)({page:page,content:content}));
+
+    fs.writeFileSync("./build/publish/" + page, makePage(jsx_content, tscript), "utf8");
 
   }
 
