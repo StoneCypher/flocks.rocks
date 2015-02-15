@@ -116,7 +116,9 @@ gulp.task("build-html", ["make-directories"], function() {
   targets.map(function(X) {
     X.map(function(Y) {
       var rawContent = fs.readFileSync("./assets/page_md/" + Y.url + ".md",  "utf8");
+      console.log("\n\nrawcontent:\n" + rawContent);
       content[Y.url] = md.render(rawContent);
+      console.log("\n\nrendercontent:\n" + content[Y.url]);
     });
   });
 
@@ -124,12 +126,17 @@ gulp.task("build-html", ["make-directories"], function() {
   for (var page in content) {
 
     var json_content = JSON.stringify(content);
+    console.log("\n\njsoncontent:\n" + json_content);
+
     var fix_closer   = new RegExp('<', 'g'); // because </script> in a string still terminates the script
     var safe_json    = json_content.replace(fix_closer, '\\x3c'); // so replace < with its unicode escape
 
+    var json_content = JSON.stringify(content);
+    console.log("\n\nsafejsoncontent:\n" + safe_json);
+
     var tscript = 'var content = ' + safe_json + ';';
 
-    fs.writeFileSync("./build/publish/" + page, makePage(content[page], tscript));
+    fs.writeFileSync("./build/publish/" + page, makePage(content[page], tscript), "utf8");
 
   }
 
