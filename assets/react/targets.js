@@ -29,23 +29,58 @@ module.exports = [
     { url        : "flocks_examples.html",
       link_text  : "<b>Examples</b>",
       page_title : "Flocks Examples"
+    },
+
+    { url        : "flocks_quick_start.html",
+      link_text  : "<b>Quick start</b>",
+      page_title : "Quick Start"
+    },
+
+    { url        : "flocks_docs.html",
+      link_text  : "<b>Documentation</b>",
+      page_title : "Flocks Docs"
     }
+  ],
+
+  [
+    { url        : "react_tutorial.html",
+      link_text  : "<b>React</b> Tutorial",
+      page_title : "React Tutorial"
+    },
+
+    { url        : "flocks_tutorial.html",
+      link_text  : "<b>Flocks</b> Tutorial",
+      page_title : "Flocks Tutorial"
+    },
+
+    { url        : "flocks_todo_mvc.html",
+      link_text  : "Flocks <b>TodoMVC</b>",
+      page_title : "Flocks TodoMVC"
+    },
+
+    { url        : "flocks_full_stack_tutorial.html",
+      link_text  : "Flocks <b>Full Stack</b> Tutorial",
+      page_title : "Flocks Full Stack Tutorial"
+    }
+
   ],
 
   [
 
     { url        : "https://github.com/StoneCypher/flocks.js",
       link_text  : "Flocks on <b>GitHub</b>",
+      new_window : true,
       skip_build : true
     },
 
     { url        : "https://www.npmjs.com/package/flocks.js",
       link_text  : "Flocks on <b>NPM</b>",
+      new_window : true,
       skip_build : true
     },
 
     { url        : "irc://irc.freenode.com/flocksjs",
-      link_text  : "<b>IRC</b> channel",
+      link_text  : "Flocks <b>IRC channel</b>",
       skip_build : true
     },
 
@@ -55,25 +90,5 @@ module.exports = [
     }
 
   ]
-
-/*
-  <a href="#" className="section-end"><div id="ls-logo">FLOCKS<br/><small>ROCKS</small></div></a>
-
-  <a href="#">What is <b>Flocks</b>?</a>
-  <a href="#" className="section-end">What is <b>React</b>?</a>
-
-  <a href="#"><b>Examples</b></a>
-  <a href="#"><b>Quick Start</b></a>
-  <a href="#" className="section-end"><b>Documentation</b></a>
-
-  <a href="#"><b>Flocks</b> Tutorial</a>
-  <a href="#">Flocks <b>TodoMVC</b></a>
-  <a href="#"><b>React</b> Tutorial</a>
-  <a href="#" className="section-end"><b>Full stack</b> Tutorial</a>
-
-  <a href="https://github.com/StoneCypher/flocks.js" target="_blank">Flocks on <b>GitHub</b></a>
-  <a href="https://www.npmjs.com/package/flocks.js" target="_blank">Flocks on <b>NPM</b></a>
-  <a href="#" className="section-end">Contact <b>John</b></a>
-*/
 
 ];

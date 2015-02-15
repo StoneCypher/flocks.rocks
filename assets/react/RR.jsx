@@ -10,6 +10,17 @@ var React  = require("react"),
     RR     = React.createClass({
 
       render: function() {
+
+        var pageClass;
+        switch (this.props.page) {
+
+          case '':
+          case 'index.html':
+            pageClass = 's1';
+            break;
+
+        }
+
         return (
           <div id="page" className="s1"><div id="overlay">
 
