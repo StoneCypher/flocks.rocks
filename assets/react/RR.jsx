@@ -16,13 +16,45 @@ var React  = require("react"),
 
           case '':
           case 'index.html':
+            pageClass = 's3';
+            break;
+
+          case 'what_is_flocks.html':
+            pageClass = 's2';
+            break;
+
+          case 'flocks_examples.html':
+            pageClass = 's4';
+            break;
+
+          case 'flocks_quick_start.html':
+            pageClass = 's2';
+            break;
+
+          case 'flocks_docs.html':
+            pageClass = 's5';
+            break;
+
+          case 'react_tutorial.html':
+            pageClass = 's3';
+            break;
+
+          case 'flocks_tutorial.html':
+            pageClass = 's2';
+            break;
+
+          case 'flocks_full_stack_tutorial.html':
+            pageClass = 's6';
+            break;
+
+          default:
             pageClass = 's1';
             break;
 
         }
 
         return (
-          <div id="page" className="s1"><div id="overlay">
+          <div id="page" className={ pageClass }><div id="overlay">
 
             <div id="content">
 

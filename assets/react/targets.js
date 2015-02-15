@@ -53,14 +53,14 @@ module.exports = [
       page_title : "Flocks Tutorial"
     },
 
-    { url        : "flocks_todo_mvc.html",
-      link_text  : "Flocks <b>TodoMVC</b>",
-      page_title : "Flocks TodoMVC"
-    },
-
     { url        : "flocks_full_stack_tutorial.html",
       link_text  : "Flocks <b>Full Stack</b> Tutorial",
       page_title : "Flocks Full Stack Tutorial"
+    },
+
+    { url        : "flocks_todo_mvc.html",
+      link_text  : "Flocks <b>TodoMVC</b>",
+      page_title : "Flocks TodoMVC"
     }
 
   ],
