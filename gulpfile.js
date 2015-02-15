@@ -171,7 +171,7 @@ gulp.task("build",      [production? "prod-build" : "dev-build"]);
 
 
 
-gulp.task("arrange-publish", ["prod-build"], function() {
+gulp.task("arrange", ["prod-build"], function() {
 
   return gulp.src([
 
@@ -188,7 +188,7 @@ gulp.task("arrange-publish", ["prod-build"], function() {
 
 
 
-gulp.task("publish", ["arrange-publish"], function() {
+gulp.task("publish", ["arrange"], function() {
 
   var headers = {"Cache-Control" : "max-age=" + max_age.toString()},
       target  = aws.create({
@@ -202,3 +202,9 @@ gulp.task("publish", ["arrange-publish"], function() {
     .pipe(aws.reporter());
 
 });
+
+
+
+
+
+gulp.task("default", ["arrange"]);
