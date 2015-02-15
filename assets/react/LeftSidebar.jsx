@@ -9,9 +9,27 @@ var React       = require("react"),
 
       render: function() {
 
+        var links   = [],
+            content = this.props.content,
+            page    = this.props.page,
+            targets = this.props.targets;
+
+        targets.map(function(Block) {
+          Block.map(function(ALink, I) {
+            links.push(
+              <a href                    = { ALink.url }
+                 className               = { (I == (Block.length-1) ) ? 'section-end' : undefined}
+                 dangerouslySetInnerHTML = { {__html:ALink.link_text}}
+              />
+            )
+          });
+        });
+
         return (
 
           <div id="left-sidebar">
+
+            {links}
 
             <a href="#" className="section-end"><div id="ls-logo">FLOCKS<br/><small>ROCKS</small></div></a>
 

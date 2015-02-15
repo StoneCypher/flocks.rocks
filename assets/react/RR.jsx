@@ -15,7 +15,7 @@ var React  = require("react"),
 
             <div id="content">
 
-              <LSide/>
+              <LSide content={this.props.content} page={this.props.page} targets={this.props.targets}/>
 
               <div dangerouslySetInnerHTML={ {__html:this.props.content[this.props.page]} } />
 

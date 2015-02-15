@@ -114,6 +114,7 @@ gulp.task("build-html", ["make-directories"], function() {
 
   targets.map(function(X) {
     X.map(function(Y) {
+      if (Y.skip_build) { return; }
       var rawContent = fs.readFileSync("./assets/page_md/" + Y.url + ".md",  "utf8");
       content[Y.url] = md.render(rawContent);
     });
@@ -126,9 +127,13 @@ gulp.task("build-html", ["make-directories"], function() {
     var fix_closer   = new RegExp('<', 'g'); // because </script> in a string still terminates the script
     var safe_json    = json_content.replace(fix_closer, '\\x3c'); // so replace < with its unicode escape
 
-    var tscript      = 'var sstate={\'page\':\'' + page + '\',\'content\':' + safe_json + '};';
+    var tscript      = 'var sstate = {' +
+                         '\'page\':\''  + page                    + '\',' +
+                         '\'targets\':' + JSON.stringify(targets) +   ',' +
+                         '\'content\':' + safe_json                       +
+                       '};';
 
-    var jsx_content  = react.renderToString(react.createFactory(rr_jsx)({page:page,content:content}));
+    var jsx_content  = react.renderToString(react.createFactory(rr_jsx)({page:page,targets:targets,content:content}));
 
     fs.writeFileSync("./build/publish/" + page, makePage(jsx_content, tscript), "utf8");
 

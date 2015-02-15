@@ -1,4 +1,7 @@
 
+/* jshint node: true */
+/* eslint-env node,browser */
+
 /** @jsx React.DOM */
 
 "use strict";
