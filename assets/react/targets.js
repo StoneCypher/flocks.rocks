@@ -7,9 +7,10 @@
 module.exports = [
 
   [
-    { url        : "index.html",
-      link_text  : "<div id=\"ls-logo\"><span>FLOCKS</span><br/><small>ROCKS</small></div>",
-      page_title : "Flocks Rocks!"
+    { url         : "index.html",
+      link_text   : "<div id=\"ls-logo\"><span>FLOCKS</span><br/><small>ROCKS</small></div>",
+      page_title  : "Flocks Rocks!",
+      skip_footer : true
     }
   ],
 

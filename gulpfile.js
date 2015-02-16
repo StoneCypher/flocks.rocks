@@ -134,6 +134,22 @@ gulp.task("build-html", ["make-directories"], function() {
     });
   });
 
+  var get_target = function(targets, page) {
+    if (targets.constructor === Array) {
+      for (var i=0, iC = targets.length; i<iC; ++i) {
+        var res = get_target(targets[i], page);
+        if (res) { return res; }
+      }
+    } else {
+      if (typeof targets.url !== 'undefined') {
+        if (targets.url === page) {
+          return targets;
+        }
+      }
+    }
+    return false;
+  };
+
   var script;
   for (var page in content) {
 
@@ -147,7 +163,9 @@ gulp.task("build-html", ["make-directories"], function() {
                          '\'content\':' + safe_json                       +
                        '};';
 
-    var jsx_content  = react.renderToString(react.createFactory(rr_jsx)({page:page,targets:targets,content:content}));
+    var this_target  = get_target(targets, page);
+    var page_cfg     = {page:page,targets:targets,content:content,this_target:this_target};
+    var jsx_content  = react.renderToString(react.createFactory(rr_jsx)(page_cfg));
 
     fs.writeFileSync("./build/publish/" + page, makePage(jsx_content, tscript), "utf8");
 

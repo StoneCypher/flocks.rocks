@@ -62,7 +62,7 @@ var React  = require("react"),
 
               <div id="contentmain">
                 <div dangerouslySetInnerHTML={ {__html:this.props.content[this.props.page]} } />
-                <div id="nextsteps">Next steps</div>
+                { (this.props.this_target.skip_footer !== true)? <div id="nextsteps">Next steps</div> : null }
               </div>
 
               <ForkMe/>
