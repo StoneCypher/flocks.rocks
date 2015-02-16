@@ -28,6 +28,10 @@ First you'll need a simple housing `HTML` document.
     <script src="http://cdnjs.com/ajax/libs/flocks/0.14.1/flocks.jsx"></script>
   </head>
 
+  <body>
+    <div id="MountPoint"></div>
+  </body>
+
 </html>
 ```
 
@@ -57,6 +61,24 @@ var GroceryLayout = React.createClass({
 
 Next, let's have `Flocks` mount `GroceryLayout` for us.
 
+We need to:
+
+  1. Identify the mount point to use in the document (we used the id `MountPoint`);
+  1. Identify the application's main `React` control (for this example, `GroceryLayout`);
+  1. Create an object mentioning the mount point and the control as `the Flocks config`;
+  1. Tell `Flocks` to create a `Flocks Updater` from the `Flocks Config`.
+
 ```javascript
-var updater = window.flocks.create()
+var MountPoint    = document.getElementById("MountPoint"),
+    FlocksConfig  = {"target": MountPoint, "control": GroceryLayout},
+    FlocksUpdater = window.flocks.create(FlocksConfig);
 ```
+
+And now we have a working Flocks application (that does basically nothing so far.)
+
+Let's make it do stuff! 🙌
+
+
+
+# Our app works but is boring
+
