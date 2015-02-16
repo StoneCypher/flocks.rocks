@@ -120,7 +120,7 @@ gulp.task("build-html", ["make-directories"], function() {
                    return ''; // use external default escaping
                  },
 
-      md       = new remarkable({ 'highlight': hl }),
+      md       = new remarkable({ 'highlight': hl, 'html': true }),
 
       makePage = function(Content, Script) {
                    return start + Script + middle + Content + end;

@@ -7,4 +7,5 @@ html, body, #host           { height: 100%; overflow: hidden; font-family: Open 
 #host             { position: fixed; top: 0; bottom: 0; left: 0; right: 0; }
 #page, #overlay   { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
 
-#content          { position: absolute; top: 0; bottom: 0; right: 0; left: @sidewidth; padding: 0 @sidegap 0 (2*@sidegap); padding-top: @toppad; overflow: auto; }
+#content          { position: absolute; top: 0; bottom: 0; right: 0; left: @sidewidth; padding: @toppad @sidegap 0 (2*@sidegap); overflow: auto; }
+#contentmain      { max-width: 74em; }

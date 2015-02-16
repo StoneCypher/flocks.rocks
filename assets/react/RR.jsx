@@ -60,7 +60,10 @@ var React  = require("react"),
 
               <LSide content={this.props.content} page={this.props.page} targets={this.props.targets}/>
 
-              <div dangerouslySetInnerHTML={ {__html:this.props.content[this.props.page]} } />
+              <div id="contentmain">
+                <div dangerouslySetInnerHTML={ {__html:this.props.content[this.props.page]} } />
+                <div id="nextsteps">Next steps</div>
+              </div>
 
               <ForkMe/>
 
