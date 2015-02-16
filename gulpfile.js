@@ -134,17 +134,27 @@ gulp.task("build-html", ["make-directories"], function() {
     });
   });
 
-  var get_target = function(targets, page) {
-    if (targets.constructor === Array) {
-      for (var i=0, iC = targets.length; i<iC; ++i) {
-        var res = get_target(targets[i], page);
-        if (res) { return res; }
-      }
-    } else {
-      if (typeof targets.url !== 'undefined') {
-        if (targets.url === page) {
-          return targets;
-        }
+  var flatten = function(tArray) {
+
+    var result = [],
+        self   = arguments.callee;
+
+    tArray.forEach(function(item) {
+      Array.prototype.push.apply(result, Array.isArray(item)? self(item) : [item]);
+    });
+
+    return result;
+
+  };
+
+  var flat_targets = flatten(targets);
+
+  var get_target = function(flat_targets, page) {
+    for (var i=0, iC=flat_targets.length; i<iC; ++i) {
+      if (flat_targets[i].url === page) {
+        prev = (i-1 < 0)?  false : flat_targets[i-1];
+        next = (i+1 > iC)? false : flat_targets[i+1];
+        return {prev:prev, current:flat_targets[i], next:next};
       }
     }
     return false;
@@ -163,8 +173,9 @@ gulp.task("build-html", ["make-directories"], function() {
                          '\'content\':' + safe_json                       +
                        '};';
 
-    var this_target  = get_target(targets, page);
-    var page_cfg     = {page:page,targets:targets,content:content,this_target:this_target};
+    var the_targets  = get_target(flat_targets, page);
+
+    var page_cfg     = {page:page,targets:targets,content:content,target:the_targets};
     var jsx_content  = react.renderToString(react.createFactory(rr_jsx)(page_cfg));
 
     fs.writeFileSync("./build/publish/" + page, makePage(jsx_content, tscript), "utf8");

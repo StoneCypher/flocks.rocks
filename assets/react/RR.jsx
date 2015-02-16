@@ -3,11 +3,12 @@
 
 "use strict";
 
-var React  = require("react"),
-    LSide  = require("./LeftSidebar"),
-    ForkMe = require("./ForkMe"),
+var React     = require("react"),
+    LSide     = require("./LeftSidebar"),
+    ForkMe    = require("./ForkMe"),
+    NextSteps = require("./NextSteps"),
 
-    RR     = React.createClass({
+    RR        = React.createClass({
 
       render: function() {
 
@@ -62,7 +63,10 @@ var React  = require("react"),
 
               <div id="contentmain">
                 <div dangerouslySetInnerHTML={ {__html:this.props.content[this.props.page]} } />
-                { (this.props.this_target.skip_footer !== true)? <div id="nextsteps">Next steps</div> : null }
+                { (this.props.target.current.skip_footer !== true)?
+                    <NextSteps prev={this.props.target.prev} next={this.props.target.next} />
+                  : null
+                }
               </div>
 
               <ForkMe/>
