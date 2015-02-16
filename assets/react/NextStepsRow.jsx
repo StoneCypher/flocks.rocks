@@ -13,7 +13,7 @@ var React        = require("react"),
 
           <div className="NextStepsRow">
             <span className="label">{this.props.label}:</span>
-            <a href={this.props.item.href}>
+            <a href={this.props.item.url}>
               {this.props.item.page_title}
               { (this.props.label === "Next")? <span>&nbsp; 👉</span> : null }
               { (this.props.label === "Prev")? <span>&nbsp; 👈</span> : null }
