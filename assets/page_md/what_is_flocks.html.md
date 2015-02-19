@@ -88,4 +88,4 @@ keep your state in.  When you update it, `Flocks` will handle re-painting the UI
 whole "one-way flow of data" loop that everyone talks about gets reduced to a single method call.
 
 This method call is available both inside of and outside of the React component tree.  Flocks
-doesn't want to control how you work.  It just wants to clean up the state management mess.
+doesn't want to control how you work.  It just wants to clean up state management.

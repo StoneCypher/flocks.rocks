@@ -38,6 +38,7 @@
     "react": "*",
     "reactify": "*",
     "remarkable": "*",
+    "twemoji": "*",
     "vinyl-source-stream": "*"
   }
 }

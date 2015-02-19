@@ -13,6 +13,7 @@ var path       = require("path"),
     react      = require("react"),
     reactify   = require("reactify"),
     jsx        = require("node-jsx").install({"extension" : ".jsx", "harmony" : true}),
+    twemoji    = require("twemoji"),
 
     remarkable = require("remarkable"),
     hl_js      = require("highlight.js"),
@@ -123,7 +124,8 @@ gulp.task("build-html", ["make-directories"], function() {
       md       = new remarkable({ 'highlight': hl, 'html': true }),
 
       makePage = function(Content, Script) {
-                   return start + Script + middle + Content + end;
+                   var eContent = twemoji.parse(Content);
+                   return start + Script + middle + eContent + end;
                  };
 
   targets.map(function(X) {
