@@ -25,12 +25,10 @@ First you'll need a simple housing `HTML` document.
     <title>Example Grocery List</title>
     <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
     <script src="http://fb.me/react-0.12.2.js"></script>
-    <script src="http://cdnjs.com/ajax/libs/flocks/0.14.1/flocks.jsx"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/0.14.3/flocks.js"></script>
   </head>
 
-  <body>
-    <div id="MountPoint"></div>
-  </body>
+  <body></body>
 
 </html>
 ```

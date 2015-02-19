@@ -36,7 +36,7 @@ incompatible layers above `React`, such as `Flux`, `Relay`, and so on.  But, no 
 `Flux` implementation exists; it's just an idea, and you're to implement it yourself.
 
 Others in the community have made a pile of `Flux` variants, each adding or removing from the
-general pattern.  `ReactFlux`, `Fluxxor`, `Fynx`, `Reflux`, `Fluxy`, `Marty`, `McFly`,
+general pattern.  `Fluxxor`, `ReactFlux`, `Fynx`, `Reflux`, `Fluxy`, `Marty`, `McFly`,
 `DeLorean`, and so forth.
 
 Still others have tried to go the Clojure route with immutable datastructures - `Om`, `Mori`,
@@ -83,9 +83,77 @@ The steps are simple:
 
 You're done!  Throw away all your boilerplate. 😃
 
-The idea is that `the Flocks Context` feels like a global.  It's a single datastructure that you
-keep your state in.  When you update it, `Flocks` will handle re-painting the UI for you.  The
-whole "one-way flow of data" loop that everyone talks about gets reduced to a single method call.
+The idea is that `the Flocks Context` is a single datastructure that you keep your state in.
+When you update it, `Flocks` will handle re-painting the UI for you.  The  whole "one-way flow
+of data" loop that everyone talks about gets reduced to a single method call.
 
 This method call is available both inside of and outside of the React component tree.  Flocks
 doesn't want to control how you work.  It just wants to clean up state management.
+
+
+
+# A tiny, complete example 🎆 🎊 🎉
+
+The simplest example that seems convenient is a spinner, made of several react controls, which
+has an upper and lower bound.  The next section is a step by step creation, but let's whet your
+appetite now.
+
+Honestly, this is simple enough to just read in a single pass.
+
+```html
+<!doctype html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Example Spinner App</title>
+
+    <style type="text/css">
+      body   { font-size: 600%; }
+      button { font-size: 50%; margin: 2em; }
+    </style>
+
+    <script defer src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script defer src="http://fb.me/react-0.12.2.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/0.14.3/flocks.js"></script>
+
+    <script defer type="text/jsx">
+
+      var Up = React.createClass({
+        mixins: [ window.flocksjs2.member ],
+        inc:    function() { this.fset('value', this.fctx['value'] + 1) },
+        render: function() { return <button onClick={this.inc}>▲</button>; }
+      });
+
+      var Down = React.createClass({
+        mixins: [ window.flocksjs2.member ],
+        dec:    function() { this.fset('value', this.fctx['value'] - 1) },
+        render: function() { return <button onClick={this.dec}>▼</button>; }
+      });
+
+      var SpinnerApp = React.createClass({
+        mixins: [ window.flocksjs2.member ],
+        render: function() { return <div><Up/>{this.fctx['value']}<Down/></div>; }
+      });
+
+      var FlocksConfig = { target: document.body, control: SpinnerApp };
+      var InitialState = { value: 0 };
+
+      var Updater      = window.flocksjs2.create(FlocksConfig, InitialState);
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>
+```
+
+Notice that we have several different controls at different levels of heirarchy interacting with
+one another's data with zero boilerplate.  No figuring out actions, or dispatchers, or stores,
+or how things are best divided up.  Just a simple object.  This is `Flocks` simplicity. 🏄
+
+
+# What's next? 😃
