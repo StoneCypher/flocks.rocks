@@ -3,6 +3,7 @@ module.exports = {
 
   "assets"      : "./assets/",
   "html"        : "./assets/html/",
+  "examples"    : "./assets/examples/",
   "less"        : "./assets/less/",
   "react"       : "./assets/react/",
   "theme"       : "./assets/source_assets/twilli_air_1.2.3/assets/images/theme_images/",

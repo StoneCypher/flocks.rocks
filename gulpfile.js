@@ -216,7 +216,19 @@ gulp.task("build",      [production? "prod-build" : "dev-build"]);
 
 
 
-gulp.task("arrange", ["prod-build"], function() {
+gulp.task("arrange-examples", ["prod-build"], function() {
+
+  return gulp.src([
+    dir("examples")    + "**/*",
+  ], {base: './assets/'}).pipe(gulp.dest( dir("publish") ));
+
+});
+
+
+
+
+
+gulp.task("arrange", ["arrange-examples", "prod-build"], function() {
 
   return gulp.src([
 
@@ -244,6 +256,7 @@ gulp.task("publish", ["arrange"], function() {
 
   return gulp.src(dirs.publish + "/**/*")
     .pipe(target.publish(headers))
+    .pipe(target.sync())
     .pipe(aws.reporter());
 
 });

@@ -97,6 +97,8 @@ doesn't want to control how you work.  It just wants to clean up state managemen
 The simplest example that seems convenient is a spinner, made of several react controls, which
 shares data across them.
 
+You can see [a live instance](http://www.flocks.rocks/examples/tiny/) too.
+
 Honestly, this is simple enough to just read in a single pass.
 
 ```html
