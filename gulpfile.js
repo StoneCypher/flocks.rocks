@@ -124,7 +124,7 @@ gulp.task("build-html", ["make-directories"], function() {
       md       = new remarkable({ 'highlight': hl, 'html': true }),
 
       makePage = function(Content, Script) {
-                   var eContent = twemoji.parse(Content);
+                   var eContent = twemoji.parse(Content, {'size': '72x72'});
                    return start + Script + middle + eContent + end;
                  };
 
