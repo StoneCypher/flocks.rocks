@@ -92,11 +92,10 @@ doesn't want to control how you work.  It just wants to clean up state managemen
 
 
 
-# A tiny, complete example 🎆 🎊 🎉
+# A tiny, complete example 🎆 🎊 🎉 <a name="tiny"></a>
 
 The simplest example that seems convenient is a spinner, made of several react controls, which
-has an upper and lower bound.  The next section is a step by step creation, but let's whet your
-appetite now.
+shares data across them.
 
 Honestly, this is simple enough to just read in a single pass.
 
@@ -110,7 +109,7 @@ Honestly, this is simple enough to just read in a single pass.
     <title>Example Spinner App</title>
 
     <style type="text/css">
-      body   { font-size: 600%; }
+      body   { font-size: 600%; font-family: helvetica neue, sans-serif; }
       button { font-size: 50%; margin: 2em; }
     </style>
 
@@ -120,27 +119,32 @@ Honestly, this is simple enough to just read in a single pass.
 
     <script defer type="text/jsx">
 
+      // up button control
       var Up = React.createClass({
         mixins: [ window.flocksjs2.member ],
         inc:    function() { this.fset('value', this.fctx['value'] + 1) },
         render: function() { return <button onClick={this.inc}>▲</button>; }
       });
 
+      // down button control
       var Down = React.createClass({
         mixins: [ window.flocksjs2.member ],
         dec:    function() { this.fset('value', this.fctx['value'] - 1) },
         render: function() { return <button onClick={this.dec}>▼</button>; }
       });
 
+      // the application root control
       var SpinnerApp = React.createClass({
         mixins: [ window.flocksjs2.member ],
         render: function() { return <div><Up/>{this.fctx['value']}<Down/></div>; }
       });
 
+      // telling flocks where to put the app control, and what that control is
       var FlocksConfig = { target: document.body, control: SpinnerApp };
       var InitialState = { value: 0 };
 
-      var Updater      = window.flocksjs2.create(FlocksConfig, InitialState);
+      // and mount the app 😄
+      window.flocksjs2.create(FlocksConfig, InitialState);
 
     </script>
 
@@ -153,7 +157,11 @@ Honestly, this is simple enough to just read in a single pass.
 
 Notice that we have several different controls at different levels of heirarchy interacting with
 one another's data with zero boilerplate.  No figuring out actions, or dispatchers, or stores,
-or how things are best divided up.  Just a simple object.  This is `Flocks` simplicity. 🏄
+or how things are best divided up.
+
+Just a simple object.
+
+This is `Flocks` simplicity. 🏄
 
 
 # What's next? 😃
