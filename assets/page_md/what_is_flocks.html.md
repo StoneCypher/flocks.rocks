@@ -123,21 +123,21 @@ Honestly, this is simple enough to just read in a single pass.
 
       // up button control
       var Up = React.createClass({
-        mixins: [ window.flocksjs2.member ],
+        mixins: [ flocks.member ],
         inc:    function() { this.fset('value', this.fctx['value'] + 1) },
         render: function() { return <button onClick={this.inc}>▲</button>; }
       });
 
       // down button control
       var Down = React.createClass({
-        mixins: [ window.flocksjs2.member ],
+        mixins: [ flocks.member ],
         dec:    function() { this.fset('value', this.fctx['value'] - 1) },
         render: function() { return <button onClick={this.dec}>▼</button>; }
       });
 
       // the application root control
       var SpinnerApp = React.createClass({
-        mixins: [ window.flocksjs2.member ],
+        mixins: [ flocks.member ],
         render: function() { return <div><Up/>{this.fctx['value']}<Down/></div>; }
       });
 
@@ -146,7 +146,7 @@ Honestly, this is simple enough to just read in a single pass.
       var InitialState = { value: 0 };
 
       // and mount the app 😄
-      window.flocksjs2.create(FlocksConfig, InitialState);
+      flocks.create(FlocksConfig, InitialState);
 
     </script>
 
