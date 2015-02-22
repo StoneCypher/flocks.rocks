@@ -117,27 +117,24 @@ Honestly, this is simple enough to just read in a single pass.
 
     <script defer src="http://fb.me/JSXTransformer-0.12.2.js"></script>
     <script defer src="http://fb.me/react-0.12.2.js"></script>
-    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/0.14.3/flocks.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/0.15.1/flocks.js"></script>
 
     <script defer type="text/jsx">
 
       // up button control
-      var Up = React.createClass({
-        mixins: [ flocks.member ],
+      var Up = flocks.createClass({
         inc:    function() { this.fset('value', this.fctx['value'] + 1) },
         render: function() { return <button onClick={this.inc}>▲</button>; }
       });
 
       // down button control
-      var Down = React.createClass({
-        mixins: [ flocks.member ],
+      var Down = flocks.createClass({
         dec:    function() { this.fset('value', this.fctx['value'] - 1) },
         render: function() { return <button onClick={this.dec}>▼</button>; }
       });
 
       // the application root control
-      var SpinnerApp = React.createClass({
-        mixins: [ flocks.member ],
+      var SpinnerApp = flocks.createClass({
         render: function() { return <div><Up/>{this.fctx['value']}<Down/></div>; }
       });
 
@@ -146,7 +143,7 @@ Honestly, this is simple enough to just read in a single pass.
       var InitialState = { value: 0 };
 
       // and mount the app 😄
-      flocks.create(FlocksConfig, InitialState);
+      flocks.mount(FlocksConfig, InitialState);
 
     </script>
 

@@ -27,14 +27,14 @@ module.exports = [
   ],
 
   [
-    { url        : "flocks_examples.html",
-      link_text  : "<b>Examples</b>",
-      page_title : "Flocks Examples"
-    },
-
     { url        : "flocks_quick_start.html",
       link_text  : "<b>Quick start</b>",
       page_title : "Quick Start"
+    },
+
+    { url        : "flocks_examples.html",
+      link_text  : "<b>Examples</b>",
+      page_title : "Flocks Examples"
     }
   ],
 
@@ -89,6 +89,12 @@ module.exports = [
 
     { url        : "irc://irc.freenode.com/flocksjs",
       link_text  : "Flocks <b>IRC channel</b>",
+      skip_build : true
+    },
+
+    { url        : "http://fullof.bs/",
+      link_text  : "<b>John</b>'s Blog",
+      new_window : true,
       skip_build : true
     },
 

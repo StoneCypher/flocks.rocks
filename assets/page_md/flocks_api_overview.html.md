@@ -6,10 +6,13 @@ For a more detailed understanding, please see [the `Flocks` Docs](flocks_docs.ht
 
 
 ## Basics
- * `flocks.create` - accepts a `config` and a `data`set; returns an updating function
+ * `flocks.createClass` - an analogue of `React.createClass` which adds `flocks.plumbing` to a `React`
+   component spec automatically
+ * `flocks.mount` - accepts a `config` and a `data`set; mounts your root control; returns an updating function
+   for use outside the controls
    * `handler` - a validation gateway function which can refuse an update
    * `finalizer` - a function called after any update
- * `mixin` - Added to controls to provide `fctx` and `fset()`
+ * `flocks.plumbing` - A mixin which is added to controls to provide `fctx` and `fset()`
 
 ## Getting values - the `Flocks` Context
  * `this.fctx` - where your `Flocks` application's state is found
