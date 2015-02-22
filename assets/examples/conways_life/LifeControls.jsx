@@ -8,9 +8,23 @@
 
 var LifeControls = flocks.createClass({
 
+  changeIsRunning: function() {
+    this.fset('running', this.fctx.running? false : true);
+  },
+
   render: function() {
 
-    return <div>Life controls</div>;
+    var label = this.fctx.running? "Stop" : "Start";
+
+    return (
+
+      <div id="controls">
+        <input type="button" onClick={this.changeIsRunning} value={label}/>
+        &nbsp; &nbsp;
+        Generation {this.fctx.generation || 0}
+      </div>
+
+    );
 
   }
 
