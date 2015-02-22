@@ -32,6 +32,21 @@ module.exports = [
       page_title : "Quick Start"
     },
 
+    { url        : "flocks_tutorial.html",
+      link_text  : "<b>Flocks</b> Tutorial",
+      page_title : "Flocks Tutorial"
+    },
+
+    { url        : "flocks_full_stack_tutorial.html",
+      link_text  : "<b>Full Stack</b> Tutorial",
+      page_title : "Flocks Full Stack Tutorial"
+    },
+
+    { url        : "react_tutorial.html",
+      link_text  : "<b>React</b> Tutorial",
+      page_title : "React Tutorial"
+    },
+
     { url        : "flocks_examples.html",
       link_text  : "<b>Examples</b>",
       page_title : "Flocks Examples"
@@ -48,29 +63,13 @@ module.exports = [
       link_text  : "<b>Documentation</b>",
       page_title : "Flocks Docs"
     }
-  ],
 
-  [
-    { url        : "react_tutorial.html",
-      link_text  : "<b>React</b> Tutorial",
-      page_title : "React Tutorial"
-    },
-
-    { url        : "flocks_tutorial.html",
-      link_text  : "<b>Flocks</b> Tutorial",
-      page_title : "Flocks Tutorial"
-    },
-
-    { url        : "flocks_full_stack_tutorial.html",
-      link_text  : "Flocks <b>Full Stack</b> Tutorial",
-      page_title : "Flocks Full Stack Tutorial"
-    },
-
-    { url        : "flocks_todo_mvc.html",
-      link_text  : "Flocks <b>TodoMVC</b>",
+/*
+  , { url        : "flocks_todo_mvc.html",
+      link_text  : "Flocks vs Flux <b>TodoMVC</b>",
       page_title : "Flocks TodoMVC"
     }
-
+*/
   ],
 
   [
