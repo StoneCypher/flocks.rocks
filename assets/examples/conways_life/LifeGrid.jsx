@@ -21,7 +21,12 @@ var LifeGrid = flocks.createClass({
 
 
   nextGen: function() {
+    this.flock();
+
     this.fset('generation', (this.fctx.generation || 0) + 1);
+    this.fset('generation', (this.fctx.generation || 0) + 1);
+
+    this.funlock();
   },
 
 
@@ -53,16 +58,21 @@ var LifeGrid = flocks.createClass({
   render: function() {
 
     var grid = this.fctx.grid,
-        rows = [];
+        rows = [],
+        row,
+        key,
+        style;
 
     for (var j=0; j<grid.height; ++j) {
-      var row = [];
+      row = [];
 
       for (var i=0; i<grid.width; ++i) {
-        row.push(<td style={ { backgroundColor: grid.data[j][i]? 'blue' : 'white' } }></td>);
+        key = 'td_' + i.toString() + '_' + j.toString();
+        style = { backgroundColor: grid.data[j][i]? 'blue' : 'white' };
+        row.push(<td key={key}style={style}></td>);
       }
 
-      rows.push(<tr>{row}</tr>);
+      rows.push(<tr key={'tr_'+j.toString()}>{row}</tr>);
     }
 
     return <table>{rows}</table>;

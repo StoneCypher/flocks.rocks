@@ -14,13 +14,16 @@ var LifeControls = flocks.createClass({
 
   render: function() {
 
-    var label = this.fctx.running? "Stop" : "Start";
+    var label = this.fctx.running? "Stop" : "Start",
+        rule  = 'b' + this.fctx.grid.rule.born.join('') + '/s' + this.fctx.grid.rule.survive.join('');
 
     return (
 
       <div id="controls">
         <input type="button" onClick={this.changeIsRunning} value={label}/>
-        &nbsp; &nbsp;
+        &nbsp; | &nbsp;
+        <input type="button" onClick={this.toggleShowRule} value={rule}/>
+        &nbsp; | &nbsp;
         Generation {this.fctx.generation || 0}
       </div>
 
