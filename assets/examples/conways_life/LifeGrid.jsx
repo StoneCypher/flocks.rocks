@@ -23,10 +23,32 @@ var LifeGrid = flocks.createClass({
   nextGrid: function(oldGrid) {
 
     var newGrid = {
-      width  : oldGrid.width,
-      height : oldGrid.height,
-      wrap   : oldGrid.wrap,
-      rule   : oldGrid.rule
+      width   : oldGrid.width,
+      height  : oldGrid.height,
+      wrap    : oldGrid.wrap,
+      rule    : oldGrid.rule,
+      rulemap : oldGrid.rulemap
+    };
+
+    var NextXL, NextXR,
+        NextYU, NextYD,
+        Sum;
+
+    var countNeighborsWithWrap = function(GridSource, X, Y, W, H) {
+      // assumes cell contents are 0 or 1
+      NextXL = ((X===0)    ? W-1 : X-1);
+      NextXR = ((X===(W-1))?  0  : X+1);
+      NextYU = ((Y===0)    ? H-1 : Y-1);
+      NextYD = ((Y===(H-1))?  0  : Y-1);
+
+      return GridSource[XL][YU] + GridSource[X][YU] + GridSource[XR][YU] +
+             GridSource[XL][Y]           +            GridSource[XR][Y]  +
+             GridSource[XL][YD] + GridSource[X][YD] + GridSource[XR][YD];
+    };
+
+    var outcome = function(GridSource, X, Y, W, H, Rule) {
+      var count = countNeighborsWithWrap(GridSource, X, Y, W, H);
+      return GridSource[X][Y]? oldGrid.rulemap.survive[count] : oldGrid.rulemap.born[count];
     };
 
     var newData = new Array(oldGrid.height);
