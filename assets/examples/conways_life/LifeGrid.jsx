@@ -30,32 +30,32 @@ var LifeGrid = flocks.createClass({
       rulemap : oldGrid.rulemap
     };
 
-    var NextXL, NextXR,
-        NextYU, NextYD,
+    var XL, XR,
+        YU, YD,
         Sum;
 
     var countNeighborsWithWrap = function(GridSource, X, Y, W, H) {
       // assumes cell contents are 0 or 1
-      NextXL = ((X===0)    ? W-1 : X-1);
-      NextXR = ((X===(W-1))?  0  : X+1);
-      NextYU = ((Y===0)    ? H-1 : Y-1);
-      NextYD = ((Y===(H-1))?  0  : Y-1);
+      XL = ((X===0)    ? W-1 : X-1);
+      XR = ((X===(W-1))?  0  : X+1);
+      YU = ((Y===0)    ? H-1 : Y-1);
+      YD = ((Y===(H-1))?  0  : Y+1);
 
-      return GridSource[XL][YU] + GridSource[X][YU] + GridSource[XR][YU] +
-             GridSource[XL][Y]           +            GridSource[XR][Y]  +
-             GridSource[XL][YD] + GridSource[X][YD] + GridSource[XR][YD];
+      return GridSource[YU][XL] + GridSource[YU][X] + GridSource[YU][XR] +
+             GridSource[Y][XL]           +            GridSource[Y][XR]  +
+             GridSource[YD][XL] + GridSource[YD][X] + GridSource[YD][XR];
     };
 
-    var outcome = function(GridSource, X, Y, W, H, Rule) {
+    var outcome = function(GridSource, X, Y, W, H, RuleMap) {
       var count = countNeighborsWithWrap(GridSource, X, Y, W, H);
-      return GridSource[X][Y]? oldGrid.rulemap.survive[count] : oldGrid.rulemap.born[count];
+      return GridSource[Y][X]? RuleMap.survive[count] : RuleMap.born[count];
     };
 
     var newData = new Array(oldGrid.height);
     for (var i=0, iC = oldGrid.height; i<iC; ++i) {
       newData[i] = new Array(oldGrid.width);
       for (var j=0, jC = oldGrid.width; j<jC; ++j) {
-        newData[i][j] = ((Math.random() > 0.5)? 1:0);
+        newData[i][j] = outcome(oldGrid.data, j, i, jC, iC, oldGrid.rulemap);
       }
     }
 
