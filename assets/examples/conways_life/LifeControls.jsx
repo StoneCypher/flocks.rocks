@@ -24,13 +24,16 @@ var LifeControls = flocks.createClass({
         mrule = function(data) {
         };
 
+/*
+        <input type="button" onClick={this.toggleShowRule} value={this.fctx.showRule? 'hide rules' : rule}/>
+        &nbsp; | &nbsp;
+*/
+
     return (
 
       <div id="controls">
         <input type="button" onClick={this.changeIsRunning} value={label}/>
-        &nbsp; | &nbsp;
-        <input type="button" onClick={this.toggleShowRule} value={this.fctx.showRule? 'hide rules' : rule}/>
-        &nbsp; | &nbsp;
+        &nbsp; &nbsp;
         Generation {this.fctx.generation || 0}
         <div style={ { display: this.fctx.showRule? 'block' : 'none' } }>
           <table id="rules">
