@@ -75,7 +75,7 @@ var LifeGrid = flocks.createClass({
       rows.push(<tr key={'tr_'+j.toString()}>{row}</tr>);
     }
 
-    return <table>{rows}</table>;
+    return <table id="grid">{rows}</table>;
 
   }
 
