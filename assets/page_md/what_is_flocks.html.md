@@ -154,7 +154,7 @@ Honestly, this is simple enough to just read in a single pass.
 </html>
 ```
 
-Notice that we have several different controls at different levels of heirarchy interacting with
+Notice that we have several different controls at different levels of hierarchy interacting with
 one another's data with zero boilerplate.  No figuring out actions, or dispatchers, or stores,
 or how things are best divided up.
 
