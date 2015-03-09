@@ -219,7 +219,7 @@ gulp.task("build",      [production? "prod-build" : "dev-build"]);
 gulp.task("arrange-examples", ["prod-build"], function() {
 
   return gulp.src([
-    dir("examples")    + "**/*",
+    dir("examples") + "**/*",
   ], {base: './assets/'}).pipe(gulp.dest( dir("publish") ));
 
 });
@@ -228,7 +228,18 @@ gulp.task("arrange-examples", ["prod-build"], function() {
 
 
 
-gulp.task("arrange", ["arrange-examples", "prod-build"], function() {
+gulp.task("arrange-docs", ["prod-build"], function() {
+
+  return gulp.src([ dir("docs") + "**/*" ], {base: '../flocks.js/doc/'})
+    .pipe(gulp.dest( dir("pub_docs") ));
+
+});
+
+
+
+
+
+gulp.task("arrange", ["arrange-examples", "arrange-docs", "prod-build"], function() {
 
   return gulp.src([
 

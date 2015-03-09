@@ -4,6 +4,7 @@ module.exports = {
   "assets"      : "./assets/",
   "html"        : "./assets/html/",
   "examples"    : "./assets/examples/",
+  "docs"        : "../flocks.js/doc/",
   "less"        : "./assets/less/",
   "react"       : "./assets/react/",
   "theme"       : "./assets/source_assets/twilli_air_1.2.3/assets/images/theme_images/",
@@ -15,6 +16,7 @@ module.exports = {
 
   "uglified_js" : "./build/uglified_js/",
 
-  "publish"     : "./build/publish/"
+  "publish"     : "./build/publish/",
+  "pub_docs"    : "./build/publish/docs/"
 
 };

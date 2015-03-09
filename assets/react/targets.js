@@ -18,12 +18,15 @@ module.exports = [
     { url        : "what_is_flocks.html",
       link_text  : "What is <b>Flocks</b>?",
       page_title : "What is Flocks?"
-    },
+    }
+/*
+    ,
 
     { url        : "what_is_react.html",
       link_text  : "What is <b>React</b>?",
       page_title : "What is React?"
     }
+*/
   ],
 
   [
@@ -31,7 +34,7 @@ module.exports = [
       link_text  : "<b>Quick start</b>",
       page_title : "Quick Start"
     },
-
+/*
     { url        : "flocks_tutorial.html",
       link_text  : "<b>Flocks</b> Tutorial",
       page_title : "Flocks Tutorial"
@@ -46,7 +49,7 @@ module.exports = [
       link_text  : "<b>React</b> Tutorial",
       page_title : "React Tutorial"
     },
-
+*/
     { url        : "flocks_examples.html",
       link_text  : "<b>Examples</b>",
       page_title : "Flocks Examples"
@@ -59,9 +62,11 @@ module.exports = [
       page_title : "Flocks Docs"
     },
 
-    { url        : "flocks_docs.html",
+    { url        : "http://flocks.rocks/docs/",
       link_text  : "<b>Documentation</b>",
-      page_title : "Flocks Docs"
+      page_title : "Flocks Docs",
+      new_window : true,
+      skip_build : true
     }
 
 /*
