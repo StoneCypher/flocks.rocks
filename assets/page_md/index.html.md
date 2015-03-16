@@ -9,3 +9,5 @@ You can be [up and running in five minutes](flocks_quick_start.html). 😍
 # This site has not yet been made.
 
 Tutorials coming *very* soon now.
+
+Examples are at the [Flocks examples page](flocks_examples.html).

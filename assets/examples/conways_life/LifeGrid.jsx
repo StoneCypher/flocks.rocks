@@ -116,9 +116,16 @@ var LifeGrid = flocks.createClass({
       row = [];
 
       for (var i=0; i<grid.width; ++i) {
-        key = 'td_' + i.toString() + '_' + j.toString();
-        style = { backgroundColor: grid.data[j][i]? 'blue' : 'white' };
-        row.push(<td key={key}style={style}></td>);
+
+        (function(ii, jj, fs, gd) { // break aliases // sigh js
+
+          var tog = function() { fs(['grid', 'data', jj, ii], gd? 0 : 1); };
+          key = 'td_' + ii.toString() + '_' + jj.toString();
+          style = { backgroundColor: gd? 'blue' : 'white' };
+          row.push(<td key={key}style={style} onClick={ tog }></td>);
+
+        })(i,j, this.fset, this.fctx.grid.data[j][i]);
+
       }
 
       rows.push(<tr key={'tr_'+j.toString()}>{row}</tr>);

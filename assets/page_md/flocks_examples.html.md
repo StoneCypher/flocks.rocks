@@ -2,13 +2,21 @@
 
 It is often said that a library marches on its examples.  By nobody.  Ever.
 
+
+
+
+
 ## Simple examples
 
-* A [spinner control](http://www.flocks.rocks/examples/tiny/), showing the sharing of a single piece of data
+* A [spinner control](/examples/tiny/), showing the sharing of a single piece of data
   across several controls, using the `Flocks mixin`.
 
-* A [Conway's Life](http://www.flocks.rocks/examples/conways_life/) implementation, showing how to work with
+* A [Conway's Life](/examples/conways_life/) implementation, showing how to work with
   basic state centralization.
+
+
+
+
 
 ## Complex examples
 
