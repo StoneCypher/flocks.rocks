@@ -10,5 +10,7 @@ html, body { margin: 0; padding: 0; border: 0; }
 
 #footer    { position: fixed; z-index: 3; bottom: 0; height: 1.5em; left: 0; right: 0; background-color: #ccc; line-height: 1.5em; padding-left: 0.4em; }
 
+#renderer pre    { background-color: #eee; padding: 1em; border: 1px solid #888; }
+
 h1,h2,h3         { margin: 0; padding: 0; }
 *+h1, *+h2, *+h3 { margin-top: 3.5em; }
