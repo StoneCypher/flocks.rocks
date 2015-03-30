@@ -1,0 +1,14 @@
+
+html, body { margin: 0; padding: 0; border: 0; }
+
+#appframe, #mainframe, #editor, #renderer { position: absolute; top: 0; left: 0; }
+
+#appframe  { bottom: 0; right: 0; position: fixed; }
+#mainframe { bottom: 1.5em; right: 0; }
+#editor    { box-sizing: border-box; height: 100%; width: 50%; border: 0; color: white; background-color: black; resize: none; }
+#renderer  { left: 50%; bottom: 0; right: 0; background-color: white; padding: 2em; overflow: auto; font-family: sans-serif; }
+
+#footer    { position: fixed; z-index: 3; bottom: 0; height: 1.5em; left: 0; right: 0; background-color: #ccc; line-height: 1.5em; padding-left: 0.4em; }
+
+h1,h2,h3         { margin: 0; padding: 0; }
+*+h1, *+h2, *+h3 { margin-top: 3.5em; }

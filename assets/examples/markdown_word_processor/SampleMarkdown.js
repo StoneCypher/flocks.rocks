@@ -1,0 +1,2 @@
+
+var SampleMarkdown = 'A simple Markdown editor\n========================\n\nSo, one easy way to show off the power of `flocks` is to write a trivial \nmarkdown text editor in a single control.  This is that demo.\n\n\n\nWhy?\n----\n\nBecause I wanted to show off just how ***ridiculously simple*** it was to do \nsomething like this.\n\nAlso because:\n\n1. It\'s neat\n1. It\'s super neat\n1. Features are cool\n\n\n\n\nPictures\n--------\n\n![](http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg)';

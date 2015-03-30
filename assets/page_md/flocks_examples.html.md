@@ -14,6 +14,8 @@ It is often said that a library marches on its examples.  By nobody.  Ever.
 * A simple [Conway's Life](/examples/simple_conways_life/) implementation, showing how to work with
   basic state centralization.
 
+* A working [Markdown Editor with Live Preview](/examples/markdown_word_processor/).
+
 
 
 

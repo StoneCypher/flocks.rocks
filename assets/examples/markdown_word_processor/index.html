@@ -5,23 +5,50 @@
 
     <meta charset="utf-8">
     <title>Example Word Processor App</title>
+    <link rel="stylesheet" type="text/css" href="EditorStyle.css">
 
-    <style type="text/css">
-      html, body   { margin: 0; padding: 0; border: 0; }
-    </style>
+    <script defer src="SampleMarkdown.js"></script>
 
-    <script defer src="http://fb.me/JSXTransformer-0.12.2.js"></script>
-    <script defer src="http://fb.me/react-0.12.2.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
     <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/0.17.1/flocks.js"></script>
+
+
 
     <script defer type="text/jsx">
 
-      var WP = flocks.createClass({
-        render: function() { return <div>hi</div>; }
+
+
+      var WordProcessor = flocks.createClass({
+
+        update: function() {
+          this.fset('content', document.getElementById('editor').value);
+        },
+
+        render: function() {
+          var content = marked(this.fctx.content || ''),
+              bytes   = this.fctx.content.length,
+              lines   = this.fctx.content.split(/\r*\n/).length,
+              stats   = lines.toString() + ' lines; ' + bytes.toString() + ' bytes';
+
+          return (
+            <div id="appframe">
+              <div id="mainframe">
+                <textarea onChange={this.update} id="editor" value={this.fctx.content}></textarea>
+                <div id="renderer" dangerouslySetInnerHTML={ {__html:content} }></div>
+                <div id="footer">{stats}</div>
+              </div>
+            </div>
+          );
+        }
+
       });
 
-      var FlocksConfig = { target: document.body, control: WP };
-      var InitialState = { state: 'boo' };
+
+
+      var FlocksConfig = { target: document.body, control: WordProcessor };
+      var InitialState = { content: SampleMarkdown }; // in SampleMarkdown.js
 
       // and mount the app 😄
       flocks.mount(FlocksConfig, InitialState);
