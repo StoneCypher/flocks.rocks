@@ -11,8 +11,21 @@ It is often said that a library marches on its examples.  By nobody.  Ever.
 * A [spinner control](/examples/tiny/), showing the sharing of a single piece of data
   across several controls, using the `Flocks mixin`.
 
-* A [Conway's Life](/examples/conways_life/) implementation, showing how to work with
+* A simple [Conway's Life](/examples/simple_conways_life/) implementation, showing how to work with
   basic state centralization.
+
+* A working [Markdown Editor with Live Preview](/examples/markdown_word_processor/).
+
+
+
+
+
+## Intermediate examples
+
+* A simple [Markdown Word Processor](/examples/markdown_word_processor/).
+
+* A more involved [Conway's Life](/examples/conways_life/) implementation, showing grid size modification,
+  custom rulesets, state save/load, and basic CSS animation.
 
 
 
