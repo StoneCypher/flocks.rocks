@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Example Word Processor App</title>
+
+    <style type="text/css">
+      html, body   { margin: 0; padding: 0; border: 0; }
+    </style>
+
+    <script defer src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script defer src="http://fb.me/react-0.12.2.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/0.17.1/flocks.js"></script>
+
+    <script defer type="text/jsx">
+
+      var WP = flocks.createClass({
+        render: function() { return <div>hi</div>; }
+      });
+
+      var FlocksConfig = { target: document.body, control: WP };
+      var InitialState = { state: 'boo' };
+
+      // and mount the app 😄
+      flocks.mount(FlocksConfig, InitialState);
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>
