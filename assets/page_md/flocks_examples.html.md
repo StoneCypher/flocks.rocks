@@ -22,8 +22,6 @@ It is often said that a library marches on its examples.  By nobody.  Ever.
 
 ## Intermediate examples
 
-* A simple [Markdown Word Processor](/examples/markdown_word_processor/).
-
 * A more involved [Conway's Life](/examples/conways_life/) implementation, showing grid size modification,
   custom rulesets, state save/load, and basic CSS animation.
 
