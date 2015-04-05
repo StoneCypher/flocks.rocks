@@ -14,11 +14,12 @@ This is a sketch of a complete Flocks application.  It just needs some controls.
 We'll get through what this means shortly.
 
 ```javascript
-var Target = document.getElementById("YourMountPoint"),
-    Update = Flocks.create({ "target": Target, "control": YourApp });
+var Config    = { target: document.body, control: YourApp },
+    InitState = { authed: false },
+    Update    = flocks.mount(Config, InitState);
 
 // stuff happens in your app and you want to change your UI
-Update({ "authed": true, "user": "BobDobbs", "session":"..." });
+Update({ authed: true, user: "BobDobbs", session:"..." });
 ```
 
 
@@ -67,17 +68,20 @@ your `dispatch`es to not get in each others' way.
 
 Instead, just work with something that feels like a global, and gives you a trivial update API.
 
+Let's look at that code again.
+
 ```javascript
-var Target = document.getElementById("YourMountPoint"),
-    Update = Flocks.create({ "target": Target, "control": YourApp });
+var Config    = { target: document.body, control: YourApp },
+    InitState = { authed: false },
+    Update    = flocks.mount(Config, InitState);
 
 // stuff happens in your app and you want to change your UI
-Update({ "authed": true, "user": "BobDobbs", "session":"..." });
+Update({ authed: true, user: "BobDobbs", session:"..." });
 ```
 
 The steps are simple:
 
-  1. Use `Flocks` to mount your root-level control
+  1. Use `Flocks` to mount your root-level control (as above)
   1. Add the `Flocks` mixin to any controls that use state
   1. Use `the Flocks Context` and `the Flocks Updater` for state
 

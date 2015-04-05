@@ -23,9 +23,9 @@ First you'll need a simple housing `HTML` document.
 
   <head>
     <title>Example Grocery List</title>
-    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
-    <script src="http://fb.me/react-0.12.2.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/0.14.3/flocks.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script src="http://fb.me/react-0.13.1.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/1.6.0/flocks.js"></script>
   </head>
 
   <body></body>
