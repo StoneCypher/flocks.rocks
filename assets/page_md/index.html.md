@@ -12,7 +12,7 @@ You can be [up and running in five minutes](flocks_quick_start.html). 😍
 
 The central goal of `Flocks` is extreme simplicity.
 
-Read more at the [What is Flocks?] page.
+<span style="color:#fbc;font-weight:bold;">Read more at the [What is Flocks?](what_is_flocks.html) page</span>.
 
 
 
@@ -35,3 +35,9 @@ Read more at the [What is Flocks?] page.
  1. There's [generated documentation](docs/) from the source.
  1. There's an [API overview](flocks_api_overview.html) to get a fast understanding of the general tools available.
  1. Tutorials are on their way soon!
+
+
+
+## Is there a community?
+
+Come catch us on the [Flocks IRC channel](irc://irc.freenode.com/flocksjs) and find out!
