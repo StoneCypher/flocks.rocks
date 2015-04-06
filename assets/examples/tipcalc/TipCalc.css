@@ -1,0 +1,69 @@
+html, body {
+  height  : 100%;
+  width   : 100%;
+  padding : 0;
+  margin  : 0;
+  border  : 0;
+}
+
+#layout {
+  position : fixed;
+  top      : 0;
+  left     : 0;
+  right    : 0;
+  bottom   : 0;
+  height   : 100%;
+  width    : 100%;
+}
+
+#layout td {
+  vertical-align : middle;
+}
+
+#panel {
+  width      : 30em;
+  margin     : 0 auto;
+  text-align : left;
+}
+
+#howHappy {
+  margin : 4em 0;
+  width  : 30em;
+}
+
+#howHappy input {
+  font-size        : 300%;
+  width            : 100%;
+  background-color : #f0f0f0;
+  border           : thin solid gray;
+}
+
+#howHappy input+input {
+  margin-top : 0.5em;
+}
+
+#amt {
+  font-size: 300%;
+}
+
+#amt input {
+  font-size           : 100%;
+  width               : 4em;
+  border              : 0 solid gray;
+  border-bottom-width : thin;
+  padding-left        : 0.2em;
+}
+
+label {
+  display : block;
+}
+
+#result {
+  font-size   : 300%;
+  font-weight : bold;
+  text-align  : center;
+}
+
+#howHappy input:focus             { background-color: #e0ffe0; }
+#howHappy input+input:focus       { background-color: #ffffe0; }
+#howHappy input+input+input:focus { background-color: #ffe0e0; }

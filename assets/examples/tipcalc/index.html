@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+  <!-- see http://www.flocks.rocks/flocks_quick_start.html -->
+
+  <head>
+
+    <title>Example Tip Calculator</title>
+
+    <link rel="stylesheet" type="text/css" href="TipCalc.css">
+
+    <script defer src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script defer src="http://fb.me/react-0.13.1.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/1.6.0/flocks.js"></script>
+
+    <script type="text/jsx" defer src="TipCalcPanel.jsx"></script>
+    <script type="text/jsx" defer src="TipCalcLayout.jsx"></script>
+    <script type="text/jsx" defer src="TipCalcApp.jsx"></script>
+
+    <script type="text/jsx" defer>
+
+      flocks.mount(
+        {target: document.body, control: TipCalcApp},
+        {bill: 0, total: 0}
+      );
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>
