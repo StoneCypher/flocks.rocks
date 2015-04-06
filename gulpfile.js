@@ -246,7 +246,8 @@ gulp.task("arrange", ["arrange-examples", "arrange-docs", "prod-build"], functio
     dir("theme")       + "**/background*.png",
     dir("background")  + "**/bg*.jpg",
     dir("built_css")   + "**/*",
-    dir("uglified_js") + "**/*"
+    dir("uglified_js") + "**/*",
+    dir("images")      + "**/*"
 
   ]).pipe(gulp.dest( dir("publish") ));
 

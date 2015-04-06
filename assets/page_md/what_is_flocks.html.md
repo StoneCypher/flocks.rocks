@@ -101,7 +101,7 @@ doesn't want to control how you work.  It just wants to clean up state managemen
 The simplest example that seems convenient is a spinner, made of several react controls, which
 shares data across them.
 
-You can see [a live instance](http://www.flocks.rocks/examples/tiny/) too.
+You can see [a live instance](http://www.flocks.rocks/examples/spinner/) too.
 
 Honestly, this is simple enough to just read in a single pass.
 
@@ -119,9 +119,9 @@ Honestly, this is simple enough to just read in a single pass.
       button { font-size: 50%; margin: 2em; }
     </style>
 
-    <script defer src="http://fb.me/JSXTransformer-0.12.2.js"></script>
-    <script defer src="http://fb.me/react-0.12.2.js"></script>
-    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/0.15.1/flocks.js"></script>
+    <script defer src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script defer src="http://fb.me/react-0.13.1.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/1.6.0/flocks.js"></script>
 
     <script defer type="text/jsx">
 

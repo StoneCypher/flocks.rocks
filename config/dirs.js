@@ -2,6 +2,7 @@
 module.exports = {
 
   "assets"      : "./assets/",
+  "images"      : "./assets/images/",
   "html"        : "./assets/html/",
   "examples"    : "./assets/examples/",
   "docs"        : "../flocks.js/doc/",
