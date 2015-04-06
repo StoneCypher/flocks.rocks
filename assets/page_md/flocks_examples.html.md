@@ -9,12 +9,19 @@ It is often said that a library marches on its examples.  By nobody.  Ever.
 ## Simple examples
 
 * A [spinner control](/examples/spinner/), showing the sharing of a single piece of data
-  across several controls, using the `Flocks mixin`.
+  across several controls, using the `Flocks mixin`, how to display it, and how to mutate
+  it simply with two buttons.
 
 * A simple [Conway's Life](/examples/simple_conways_life/) implementation, showing how to work with
-  basic state centralization.
+  basic state centralization, how to attach click handlers to inappropriate things (table cells,)
+  and how to use lots of the color blue.
 
-* A working [Markdown Editor with Live Preview](/examples/markdown_word_processor/).
+* A working [Markdown Editor with Live Preview](/examples/markdown_word_processor/) which shows how
+  to work with textareas, a foreign markdown library loaded from CDN, and simple regular expressions.
+
+* A simple [tip calculator](/examples/tipcalc/) which shows how to work with text inputs, buttons,
+  and basic CSS.  Also, presented being built piece by piece as part of the
+  [Flocks Quick Start](http://www.flocks.rocks/flocks_quick_start.html) tutorial.
 
 
 

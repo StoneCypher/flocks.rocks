@@ -13,6 +13,10 @@ simple, we'll also keep the controls in their own files, and just load the files
 from script tags.  In a production environment we'd concatenate and uglify
 instead.
 
+
+
+## What we'll build
+
 What we'll do is build the calculator step by step.  In each heading you'll see
 a "checkpoint" that points to a Github revision.  Those checkpoints are always
 runable in a browser, and the Github revision pointed to contains the code as
@@ -31,7 +35,7 @@ Let's begin.
 
 
 
-## Housing `HTML` document
+## `HTML` boilerplate
 
 First you'll need a simple housing `HTML` document.
 
@@ -154,12 +158,10 @@ var TipCalcLayout = flocks.createClass({
 
   render: function() {
 
-    var tdstyle = { verticalAlign: 'middle', textAlign: 'center' };
-
     return (
       <table id="layout">
         <tr>
-          <td style={tdstyle}>{this.props.children}</td>
+          <td>{this.props.children}</td>
         </tr>
       </table>
     );
@@ -168,20 +170,6 @@ var TipCalcLayout = flocks.createClass({
 
 });
 ```
-
-Notice the bit that says `{this.props.children}` inside the central `<td>`.
-There are two things to learn there: one is that `{ }` braces inside JSX allow
-you to include arbitrary javascript, and two is that `this.props.children`
-refers to the parse of the interior of this control when used from the outside.
-
-That is, if you were making `<foo>`, and you had a structure like
-
-```html
-<div><foo><bar>hello</bar><quux>ohai</quux></foo></div>
-```
-
-then the `this.props.children` array would contain two elements - the first for
-`<bar>` and the second for `<quux>`.
 
 Then we can change the render function in `TipCalcApp` to read
 
