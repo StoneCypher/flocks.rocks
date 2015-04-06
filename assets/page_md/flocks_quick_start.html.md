@@ -278,9 +278,9 @@ var TipCalcPanel = flocks.createClass({
         </label>
 
         <div id="howHappy">
-          <input type="button" value={"25%"}/>
-          <input type="button" value={"20%"}/>
-          <input type="button" value={"15%"}/>
+          <input type="button" value="25%"/>
+          <input type="button" value="20%"/>
+          <input type="button" value="15%"/>
         </div>
 
         <div id="result">
@@ -467,17 +467,17 @@ in through the downwards closure.
 Then we need to use the handler generator on the buttons.  What was
 
 ```html
-<input type="button" value={"25%"}/>
-<input type="button" value={"20%"}/>
-<input type="button" value={"15%"}/>
+<input type="button" value="25%"/>
+<input type="button" value="20%"/>
+<input type="button" value="15%"/>
 ```
 
 shall now be
 
 ```html
-<input type="button" value={"25%"} onClick={this.setTotal(1.25)}/>
-<input type="button" value={"20%"} onClick={this.setTotal(1.20)}/>
-<input type="button" value={"15%"} onClick={this.setTotal(1.15)}/>
+<input type="button" value="25%" onClick={this.setTotal(1.25)}/>
+<input type="button" value="20%" onClick={this.setTotal(1.20)}/>
+<input type="button" value="15%" onClick={this.setTotal(1.15)}/>
 ```
 
 We can also now fix the fake total update.  What was
@@ -592,7 +592,12 @@ becomes
 <input type="button" value={"15% = $" + this.fmt(0.15)} onClick={this.setTotal(1.15)}/>
 ```
 
-Then stuffing in emoji is simple, because it's just unicode.
+The important bit is changing `value="25%"` to `value={"25% = $" + this.fmt(0.25)}`.
+One was just a string; the other, because of the `{ }`, is a piece of included
+javascript which builds a string from a string and a function call.
+
+Then stuffing in emoji is simple, because it's just unicode.  Toss it into the
+first string.  Hope you have a modern text editor.
 
 ```html
 <input type="button" value={"😁 25% = $" + this.fmt(0.25)} onClick={this.setTotal(1.25)}/>
