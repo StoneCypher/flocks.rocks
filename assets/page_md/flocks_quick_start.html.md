@@ -20,8 +20,14 @@ the tutorial has gotten to up and until that point.
 
 The text makes you think a little bit about where things go, to help things
 sink in about how to do the work, but there's always the
-Github repo to fall
-bac
+[Github repo](https://github.com/StoneCypher/flocks-tipcalc/) to fall back to if
+you need to take a look at the official state.
+
+Should be pretty straightforward.
+
+We're gonna build an app from scratch, including a modest interactive form.
+
+Let's begin.
 
 
 
@@ -99,9 +105,6 @@ we'd concatenate and uglify instead, but tutorials should stay simple,) like so:
 
 But nothing will render yet, because the app isn't being mounted yet.  So this
 will still white-screen.
-
-Note: if you look at the Github repo, you'll see that this control and all the
-
 
 
 
@@ -370,7 +373,7 @@ Let's set up some causes to see that number change.
 ## Hooking up the `bill` input
 
 We'll need that bill amount to do something too.  Relatively straightforward,
-though it won't be *immediately* visible.
+and we'll cheat a bit to make it immediately visible.
 
 First, let's add a method to the control, so that there's a function label we
 can give to the form element in a closure.  That method will read the current
