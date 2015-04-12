@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Example Conway's Game of Life App</title>
+
+    <style type="text/css">
+      html, body   { margin: 0; padding: 0; border: 0; }
+      body         { padding: 2em; }
+      #grid        { border-collapse: separate; border-spacing: 0; border: 1px solid black;  }
+      #grid td     { border: 1px solid #49d; text-align: center; vertical-align: middle; height: 1.25em; width: 1.25em; }
+      #controls    { margin-bottom: 1em; }
+      #rules       { margin-top: 1em; }
+      #rules input { margin-right: 1em; }
+      #rules th    { text-align: right; padding-right: 1em; }
+    </style>
+
+    <script defer src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script defer src="http://fb.me/react-0.13.1.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/1.6.0/flocks.js"></script>
+
+    <script defer type="text/jsx" src="BarGraph.jsx"></script>
+
+    <script defer type="text/jsx">
+
+      // the game of life root control
+      var BarGraphExample = flocks.createClass({
+        render: function() { return (
+          <div>
+            <BarGraph data="32,38,14,29,31"/>
+          </div>
+        ); }
+      });
+
+      // and mount the app 😄
+      flocks.mount({ target: document.body, control: BarGraphExample }, {});
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>
