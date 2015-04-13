@@ -10,7 +10,7 @@
       html, body   { margin: 0; padding: 0; border: 0; }
       body         { padding: 2em; background-color: #eee; }
       .bar         { transition: width 0.25s, height 1s; }
-      textarea     { margin: 1em; height: 200px; width: 500px; }
+      textarea     { margin: 1em; height: 50px; width: 500px; }
     </style>
 
     <script defer src="http://fb.me/JSXTransformer-0.13.1.js"></script>
@@ -25,7 +25,7 @@
         update: function() { this.fset('data', JSON.parse(document.getElementById('ta').value)); },
         render: function() { return (
           <div>
-            <BarGraph data={this.fctx.data} width="800px" height="600px"/><br/>
+            <BarGraph data={this.fctx.data} width="600px" height="400px"/><br/>
             <textarea id="ta" value={JSON.stringify(this.fctx.data)} onChange={this.update}/>
           </div>
         ); }
