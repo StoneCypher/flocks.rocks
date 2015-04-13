@@ -30,7 +30,12 @@ var Heatmap = flocks.createClass({
           var Cells = Row.map(function(Cell) {
 
             var last = 0,
-                idx  = key.find(function(X,i) { if (X <= Cell) { last=i; } return X > Cell; });
+                idx  = 0;
+
+            for (var i=0, iC=key.length; i<iC; ++i) {
+              if (key[i] <= Cell) { last=i; }
+              idx = key[i] > Cell;
+            }
 
             return <td style={tdstyle(colors[ last ])}></td>;
 
