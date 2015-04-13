@@ -19,14 +19,14 @@
 
     <script defer type="text/jsx">
 
-      // the game of life root control
       var BarGraphExample = flocks.createClass({
         render: function() { return (
           <div>
             <BarGraph data={[32,38,14,29,31]}/>
             <BarGraph data={[22,23,24,25,26,27,28,29,30,31,32,33]}/>
             <BarGraph data={[3,2,4]}/>
-            <BarGraph data={[29,39,19,22]} color="orange" barColor="blue"/>
+            <BarGraph data={[29,39,19,22]}   color="orange" barColor="blue"/>
+            <BarGraph data={[8,6,7,5,3,0,9]} barColor={['red','orange','yellow','green','blue','magenta','purple']}/>
           </div>
         ); }
       });

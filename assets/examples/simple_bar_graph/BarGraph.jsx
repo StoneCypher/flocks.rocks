@@ -17,7 +17,9 @@ var BarGraph = flocks.createClass({
 
         style = {
 
-          lineHeight  : '100%',
+          lineHeight      : '100%',
+
+          display         : this.props.display   || 'inline-block',
 
           margin          : this.props.margin    || '1em',
           padding         : this.props.padding   || '0.5em 0.5em 0 0.5em',
@@ -33,7 +35,8 @@ var BarGraph = flocks.createClass({
 
         },
 
-        makeBarStyle = function(Height, isFirst) {
+        makeBarStyle = function(Height, index) {
+          var uBarColor = (Object.prototype.toString.call(self.props.barColor) === '[object Array]')? self.props.barColor[index % colCount] : (self.props.barColor || '#24a9e1');
           return {
             width           : colWidth,
             height          : ((Height / colMax) * 100).toString() + '%',
@@ -43,14 +46,14 @@ var BarGraph = flocks.createClass({
             fontFamily      : self.props.fontFamily || 'sans-serif',
             fontSize        : self.props.fontSize   || '70%',
             color           : self.props.color      || 'white',
-            margin          : self.props.margin     || (isFirst? '0' : '0 0 0 1%'),
+            margin          : self.props.margin     || ((index === 0)? '0' : '0 0 0 1%'),
             padding         : self.props.padding    || '0',
-            backgroundColor : self.props.barColor   || '#24a9e1'
+            backgroundColor : uBarColor
           };
         },
 
         outBars = cols.map(function(ColHeight, i) {
-          return <div style={makeBarStyle(ColHeight, i === 0)}>{ColHeight.toString()}</div>;
+          return <div style={makeBarStyle(ColHeight, i)}>{ColHeight.toString()}</div>;
         });
 
     return <div style={style}>{outBars}</div>;
