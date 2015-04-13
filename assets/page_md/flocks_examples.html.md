@@ -6,7 +6,7 @@ It is often said that a library marches on its examples.  By nobody.  Ever.
 
 
 
-## Simple examples
+## Simple flocks examples
 
 * A [spinner control](/examples/spinner/), showing the sharing of a single piece of data
   across several controls, using the `Flocks mixin`, how to display it, and how to mutate
@@ -22,6 +22,17 @@ It is often said that a library marches on its examples.  By nobody.  Ever.
 * A simple [tip calculator](/examples/tipcalc/) which shows how to work with text inputs, buttons,
   and basic CSS.  Also, presented being built piece by piece as part of the
   [Flocks Quick Start](http://www.flocks.rocks/flocks_quick_start.html) tutorial.
+
+
+
+
+
+## Simple react examples
+
+* A simple [bar graph control](/examples/simple_bar_graph/) which accepts a range of configuration
+  parameters and scales itself to fit its space.
+
+* An animated, live-editable [animated bar graph control](/examples/animated_bar_graph/).
 
 
 

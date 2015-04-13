@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Example Conway's Game of Life App</title>
+
+    <style type="text/css">
+      html, body   { margin: 0; padding: 0; border: 0; }
+      body         { padding: 2em; background-color: #eee; }
+      .bar         { transition: width 0.25s, height 1s; }
+      textarea     { margin: 1em; height: 200px; width: 500px; }
+    </style>
+
+    <script defer src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script defer src="http://fb.me/react-0.13.1.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/1.6.0/flocks.js"></script>
+
+    <script defer type="text/jsx" src="BarGraph.jsx"></script>
+
+    <script defer type="text/jsx">
+
+      var BarGraphExample = flocks.createClass({
+        update: function() { this.fset('data', JSON.parse(document.getElementById('ta').value)); },
+        render: function() { return (
+          <div>
+            <BarGraph data={this.fctx.data} width="800px" height="600px"/><br/>
+            <textarea id="ta" value={JSON.stringify(this.fctx.data)} onChange={this.update}/>
+          </div>
+        ); }
+      });
+
+      // and mount the app 😄
+      flocks.mount({ target: document.body, control: BarGraphExample }, {
+        data: [22,23,24,25,26,27,28,29,30,31,32,33]
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>
