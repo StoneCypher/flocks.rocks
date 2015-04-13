@@ -23,6 +23,10 @@ It is often said that a library marches on its examples.  By nobody.  Ever.
   and basic CSS.  Also, presented being built piece by piece as part of the
   [Flocks Quick Start](http://www.flocks.rocks/flocks_quick_start.html) tutorial.
 
+* A quick implementation of [automatic load and save with localStorage](/examples/save_load_state/)
+  which shows how to wire localStorage up to be stored to on every state change, with no need to
+  voluntarily save, and how to load initially with consulting that storage in mind.
+
 
 
 

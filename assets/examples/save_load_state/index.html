@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Example of saving and loading simple state from window.localStorage</title>
+
+    <style type="text/css">
+      html, body   { margin: 0; padding: 0; border: 0; }
+      body         { padding: 1em 2em; background-color: #eee; }
+      textarea     { margin-top: 1em; height: 350px; width: 600px; }
+    </style>
+
+    <script defer src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script defer src="http://fb.me/react-0.13.1.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/1.6.0/flocks.js"></script>
+
+    <script defer type="text/jsx">
+
+      var SaveLoadStateExample = flocks.createClass({
+
+        update: function() {
+          var cur = document.getElementById('ta').value;
+          this.fset('data', cur);
+          window.localStorage.setItem('contents', cur)
+        },
+
+        render: function() {
+          return (
+            <div>
+
+              <p>Everything you type in this box will persist (up to some 5 meg or so anyway)</p>
+
+              <textarea id="ta" value={this.fctx.data} onChange={this.update}/>
+
+              <p>
+                On keypress, everything is being written to <tt>window.localStorage</tt>, which
+                is also consulted on load.
+              </p>
+
+            </div>
+          );
+        }
+
+      });
+
+      // and mount the app 😄
+      flocks.mount({ target: document.body, control: SaveLoadStateExample }, {
+        data: window.localStorage.getItem('contents') || 'Welcome to Save Load State example'
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>
