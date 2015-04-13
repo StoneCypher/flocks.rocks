@@ -45,8 +45,11 @@ var Heatmap = flocks.createClass({
 
         }),
 
-        colorRow = <tr>{[0,1,2,3,4,5,6,7,8].map(function(i) { return <td style={{width:'4em',height:'1.5em',backgroundColor:colors[i]}}></td>; })}</tr>,
-        keyRow   = <tr>{[0,1,2,3,4,5,6,7,8].map(function(i) { return <td>&ge; {key[i]}</td>; })}</tr>;
+        // just generates [0..8] or whatever range buckets requests
+        keyseq = Array.apply(0, Array(buckets)).map(function (x, y) { return y + 1; }),
+
+        colorRow = <tr>{keyseq.map(function(i) { return <td style={{width:'4em',height:'1.5em',backgroundColor:colors[i]}}></td>; })}</tr>,
+        keyRow   = <tr>{keyseq.map(function(i) { return <td>&ge; {key[i]}</td>; })}</tr>;
 
     return (
       <div>
