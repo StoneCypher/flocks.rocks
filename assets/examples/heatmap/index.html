@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Example heatmap</title>
+
+    <style type="text/css">
+      html, body   { margin: 0; padding: 0; border: 0; }
+      body         { padding: 1em 2em; background-color: #eee; }
+      textarea     { margin-top: 1em; height: 350px; width: 600px; }
+    </style>
+
+    <script defer src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script defer src="http://fb.me/react-0.13.1.js"></script>
+    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/flocks.js/1.6.0/flocks.js"></script>
+
+    <script defer type="text/jsx" src="Heatmap.jsx"></script>
+
+    <script defer type="text/jsx">
+
+      var data = [
+            [ 16, 20, 0, 0, 0, 2, 0, 9, 25, 49, 57, 61, 37, 66, 70, 55, 51, 55, 17, 20, 9, 4, 0, 12, ],
+            [ 6, 2, 0, 0, 0, 2, 4, 11, 28, 49, 51, 47, 38, 65, 60, 50, 65, 50, 22, 11, 12, 9, 0, 13, ],
+            [ 5, 8, 8, 0, 0, 2, 5, 12, 34, 43, 54, 44, 40, 48, 54, 59, 60, 51, 21, 16, 9, 5, 4, 7, ],
+            [ 0, 0, 0, 0, 0, 2, 4, 13, 26, 58, 61, 59, 53, 54, 64, 55, 52, 53, 18, 3, 9, 12, 2, 8, ],
+            [ 2, 0, 8, 2, 0, 2, 4, 14, 31, 48, 46, 50, 66, 54, 56, 67, 54, 23, 14, 6, 8, 7, 0, 8, ],
+            [ 2, 0, 2, 0, 0, 0, 4, 8, 8, 6, 14, 12, 9, 14, 0, 4, 7, 6, 0, 0, 0, 0, 0, 0, ],
+            [ 7, 6, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 5, 6, 0, 4, 0, 2, 10, 7, 0, 19, 9, 4, ]
+          ],
+
+          days     = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+          times    = ["1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a", "10a", "11a", "12a", "1p", "2p", "3p", "4p", "5p", "6p", "7p", "8p", "9p", "10p", "11p", "12p"],
+          quantile = [0, 2, 4, 5, 7, 15, 29, 42, 56],
+
+          HeatmapExample = flocks.createClass({
+
+            render: function() {
+              return (
+
+                <div>
+
+                  <Heatmap data={data} rows={days} cols={times} dkey={quantile}/>
+                  <p>Compare in complexity to <a href="http://bl.ocks.org/tjdecke/5558084">the d3 implementation</a>.</p>
+
+                </div>
+
+              );
+            }
+
+          });
+
+      // and mount the app 😄
+      flocks.mount({ target: document.body, control: HeatmapExample }, {
+      });
+
+    </script>
+
+  </head>
+
+  <body></body>
+
+</html>

@@ -6,7 +6,7 @@ It is often said that a library marches on its examples.  By nobody.  Ever.
 
 
 
-## Simple flocks examples
+## Simple examples
 
 * A [spinner control](/examples/spinner/), showing the sharing of a single piece of data
   across several controls, using the `Flocks mixin`, how to display it, and how to mutate
@@ -27,14 +27,17 @@ It is often said that a library marches on its examples.  By nobody.  Ever.
   which shows how to wire localStorage up to be stored to on every state change, with no need to
   voluntarily save, and how to load initially with consulting that storage in mind.
 
+* A [bar graph control](/examples/simple_bar_graph/) which accepts a range of configuration
+  parameters, allows you to specify color ranges, and scales itself to fit its space.
 
 
 
 
-## Simple react examples
 
-* A simple [bar graph control](/examples/simple_bar_graph/) which accepts a range of configuration
-  parameters and scales itself to fit its space.
+## Intermediate examples
+
+* A [day / hour heatmap](/examples/heatmap/) meant to closely imitate the related and inspiring
+  [d3 example](http://bl.ocks.org/tjdecke/5558084) in rather less code.
 
 * An animated, live-editable [animated bar graph control](/examples/animated_bar_graph/).
 
