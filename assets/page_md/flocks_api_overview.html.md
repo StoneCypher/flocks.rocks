@@ -1,7 +1,7 @@
 # API Overview
 
 This is meant to be a quick overview to understand the general shape of `Flocks`.
-For a more detailed understanding, please see [the `Flocks` Docs](flocks_docs.html).
+For a more detailed understanding, please see [the `Flocks` Docs](/docs/).
 
 
 
