@@ -38,7 +38,7 @@ var BarGraph = flocks.createClass({
         makeBarStyle = function(Height, index) {
           var uBarColor = (Object.prototype.toString.call(self.props.barColor) === '[object Array]')? self.props.barColor[index % colCount] : (self.props.barColor || '#24a9e1');
           return {
-            transition      : 'transition: width 0.25s, height 1s',
+            transition      : 'width 0.25s, height 1s',
             overflow        : 'hidden',
             width           : colWidth,
             height          : ((Height / colMax) * 100).toString() + '%',
