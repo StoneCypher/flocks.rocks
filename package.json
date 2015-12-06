@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "The flocks.rocks promotional website for Flocks.JS",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/StoneCypher/flocks.rocks.git"
